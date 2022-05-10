@@ -53,6 +53,24 @@ Character.init(
             validate: {
                 isNumeric: true
             }
+        },
+        character_weapon: {
+            type: DataTypes.INTEGER,
+            references: {
+                // add weapon info here after weapon model is created
+            }
+        },
+        character_armor: {
+            type: DataTypes.INTEGER,
+            references: {
+                // add armor info here after armor model is created
+            }
+        },
+        character_consumable: {
+            type: DataTypes.INTEGER,
+            references: {
+                // add consumable info here after consumable model is created
+            }
         }
     },
     {
