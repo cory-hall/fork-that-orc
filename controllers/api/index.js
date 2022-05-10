@@ -9,6 +9,3 @@ router.use('/inventory', inventoryRoutes);
 router.use('/user', userRoutes);
 
 module.exports = router;
-
-//login page
-// router.post (/login)
