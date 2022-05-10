@@ -1,0 +1,29 @@
+{
+  "name": "fork-that-orc",
+  "version": "1.0.0",
+  "description": "RPG Character Randomizer",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cory-hall/fork-that-orc.git"
+  },
+  "author": "Cory, Austin, Joel, Trevor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cory-hall/fork-that-orc/issues"
+  },
+  "homepage": "https://github.com/cory-hall/fork-that-orc#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.3",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.5",
+    "express-session": "^1.17.2",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.19.0"
+  }
+}
