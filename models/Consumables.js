@@ -22,7 +22,7 @@ Consumable.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'product',
+        modelName: 'consumable',
     }
 );
 module.exports = Consumable;
