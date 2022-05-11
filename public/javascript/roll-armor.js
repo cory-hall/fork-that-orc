@@ -14,6 +14,10 @@ function findArmor() {
     const armor = armorDbData.map(armor => armor.get({ plain : true }));
     const index = randomInt(armor);
 
-    return index;
+    const foundArmor = armor.armor_name[index]
+
+    return foundArmor;
   })
 }
+
+module.exports = { findArmor };
