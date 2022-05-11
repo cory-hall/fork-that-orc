@@ -67,13 +67,13 @@ Character.init(
                 model: 'armor',
                 key: 'id'
             }
-        },
-        character_consumable: {
-            type: DataTypes.STRING,
-            references: {
-                // add consumable info here after consumable model is created
-            }
         }
+        // character_consumable: {
+        //     type: DataTypes.STRING,
+        //     references: {
+        //         // add consumable info here after consumable model is created
+        //     }
+        // }
     },
     {
         sequelize,

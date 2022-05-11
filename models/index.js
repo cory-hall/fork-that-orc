@@ -7,7 +7,7 @@ const Weapons = require('./Weapons');
 
 //const Consumables = require('./Consumables');
 
-Weapons.belongstoMany(Character, {
+Weapons.hasMany(Character, {
     foreignKey: 'weapon_id'
 });
 
@@ -15,7 +15,7 @@ Character.belongsTo(Weapons, {
     foreignKey: 'character_id'
 });
 
-Armors.belongstoMany(Character, {
+Armors.hasMany(Character, {
     foreignKey: 'armor_id'
 });
 
