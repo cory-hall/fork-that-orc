@@ -18,8 +18,11 @@ Weapon.init(
         weapon_class: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        weapon_rating: {
+            type: DataTypes.INTEGER,
+            allowNull: false
         }
-        // add attack rating
     },
     {
         sequelize,

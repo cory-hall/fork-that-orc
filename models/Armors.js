@@ -18,8 +18,11 @@ Armor.init(
         armor_class: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        armor_rating: {
+            type: DataTypes.INTEGER,
+            allowNull: false
         }
-        // add defense rating
     },
     {
         sequelize,
