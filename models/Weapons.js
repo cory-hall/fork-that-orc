@@ -14,6 +14,10 @@ Weapon.init(
         armor_name: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        weapon_class: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
     },
     {

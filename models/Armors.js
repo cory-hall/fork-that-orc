@@ -14,6 +14,10 @@ Armor.init(
         armor_name: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        armor_class: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
     },
     {

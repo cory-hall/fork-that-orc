@@ -15,6 +15,10 @@ Consumable.init(
             type: DataTypes.STRING,
             allowNull: false
         },
+        consumable_class: {
+            type: DataTypes.STRING,
+            allowNull: false
+        }
         
     },
     {
