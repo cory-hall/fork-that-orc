@@ -1,6 +1,6 @@
-const { Weapon } = require('../models');
+const { Armor } = require('../models');
 
-const postdata = [
+const armordata = [
     {
         armor_name: 'Heavy Chainmail',
         armor_class: 'Warrior'
@@ -27,6 +27,6 @@ const postdata = [
     }
 ];
 
-const seedArmors = () => Post.bulkCreate(postdata);
+const seedArmors = () => Armor.bulkCreate(armordata);
 
 module.export = seedArmors;
