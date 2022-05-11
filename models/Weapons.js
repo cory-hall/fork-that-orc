@@ -11,7 +11,7 @@ Weapon.init(
             primaryKey: true,
             autoIncrement: true
         },
-        armor_name: {
+        weapon_name: {
             type: DataTypes.STRING,
             allowNull: false
         },
