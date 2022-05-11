@@ -19,6 +19,7 @@ Weapon.init(
             type: DataTypes.STRING,
             allowNull: false
         }
+        // add attack rating
     },
     {
         sequelize,

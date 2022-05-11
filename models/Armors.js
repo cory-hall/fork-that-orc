@@ -19,6 +19,7 @@ Armor.init(
             type: DataTypes.STRING,
             allowNull: false
         }
+        // add defense rating
     },
     {
         sequelize,
