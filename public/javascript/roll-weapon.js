@@ -22,5 +22,3 @@ function findWeapon() {
 
 module.exports = { foundWeapon };
 
-
-
