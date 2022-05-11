@@ -55,19 +55,19 @@ Character.init(
             }
         },
         character_weapon: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             references: {
                 // add weapon info here after weapon model is created
             }
         },
         character_armor: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             references: {
                 // add armor info here after armor model is created
             }
         },
         character_consumable: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             references: {
                 // add consumable info here after consumable model is created
             }

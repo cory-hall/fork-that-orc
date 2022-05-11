@@ -1,7 +1,34 @@
 //import models
-const Armor = require('./Armor');
+const Armors = require('./Armors');
 const Character = require('./Character');
-const Consumables = require('./Consumables');
 const Inventory = require('./Inventory');
 const User = require('./User');
 const Weapons = require('./Weapons');
+
+//const Consumables = require('./Consumables');
+
+Weapons.belongstoMany(Character, {
+    foreignKey: 'weapon_id'
+});
+
+Character.belongsTo(Weapons, {
+    foreignKey: 'character_id'
+});
+
+Armors.belongstoMany(Character, {
+    foreignKey: 'armor_id'
+});
+
+Character.belongsTo(Armors, {
+    foreignKey: 'character_id'
+});
+
+User.hasMany(Character, {
+    foreignKey: 'user_id'
+})
+
+Character.belongsTo(User, {
+    foreignKey: 'character_id'
+})
+
+module.exports = { User, Weapons, Armors, Character };
