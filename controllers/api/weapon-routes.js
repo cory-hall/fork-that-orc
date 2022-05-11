@@ -34,5 +34,26 @@ router.post('/', (req, res) => {
       weapon_class: req.body.weapon_class,
       weapon_rating: req.body.weapon_rating
     })
+      .then(dbData => res.json(dbData))
+      .catch(dbData => {
+        console.log(err);
+        res.status(400).json(err);
+      })
   }
+});
+
+// DELETE a weapon based on `id` value
+router.delete('/:id', (req, res) => {
+  Weapons.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+  .then(dbData => {
+    if (!dbData) {
+      res.status(404).json({ message: 'No weapon found with this id' });
+      return;
+    }
+    res.json(dbData)
+  })
 })
