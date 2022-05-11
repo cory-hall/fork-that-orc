@@ -1,4 +1,4 @@
-const { Armor } = require('../models');
+const { Armors } = require('../models');
 
 const armordata = [
     {
@@ -33,6 +33,6 @@ const armordata = [
     }
 ];
 
-const seedArmors = () => Armor.bulkCreate(armordata);
+const seedArmors = () => Armors.bulkCreate(armordata);
 
-module.export = seedArmors;
+module.exports = seedArmors;

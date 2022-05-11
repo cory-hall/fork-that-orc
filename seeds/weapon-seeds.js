@@ -1,4 +1,4 @@
-const { Weapon } = require('../models');
+const { Weapons } = require('../models');
 
 const weapondata = [
     {
@@ -33,6 +33,6 @@ const weapondata = [
     }
 ];
 
-const seedWeapons = () => Weapon.bulkCreate(weapondata);
+const seedWeapons = () => Weapons.bulkCreate(weapondata);
 
-module.export = seedWeapons;
+module.exports = seedWeapons;
