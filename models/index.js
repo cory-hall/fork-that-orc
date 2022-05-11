@@ -4,8 +4,7 @@ const Character = require('./Character');
 const Inventory = require('./Inventory');
 const User = require('./User');
 const Weapons = require('./Weapons');
-
-//const Consumables = require('./Consumables');
+const Consumables = require('./Consumables');
 
 Weapons.hasMany(Character, {
     foreignKey: 'weapon_id'
@@ -31,4 +30,12 @@ Character.belongsTo(User, {
     foreignKey: 'character_id'
 })
 
-module.exports = { User, Weapons, Armors, Character };
+Consumables.belongsTo(User, {
+    foreignKey: 'consumable_id'
+})
+
+User.hasMany(Consumables, {
+    forgeinKey: 'user_id'
+})
+
+module.exports = { User, Weapons, Armors, Character, Consumables };

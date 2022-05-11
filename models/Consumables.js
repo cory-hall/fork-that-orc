@@ -18,6 +18,10 @@ Consumable.init(
         consumable_class: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        consumable_effect: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
         
     },

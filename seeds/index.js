@@ -1,7 +1,8 @@
 const seedWeapons = require('./weapon-seeds');
 const seedArmors = require('./armor-seeds');
+const seedConsumables = require('./consumable-seeds');
 
-// const seedConsumables = require('./consumable-seeds');
+
 
 const sequelize = require('../config/connection');
 
@@ -15,8 +16,8 @@ const seedAll = async () => {
     await seedArmors();
     console.log('--------------');
 
-    // await seedConsumables();
-    // console.log('--------------');
+    await seedConsumables();
+    console.log('--------------');
 
     process.exit(0);
 };
