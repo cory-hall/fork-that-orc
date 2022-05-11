@@ -57,13 +57,15 @@ Character.init(
         character_weapon: {
             type: DataTypes.STRING,
             references: {
-                // add weapon info here after weapon model is created
+                model: 'weapon',
+                key: 'id'
             }
         },
         character_armor: {
             type: DataTypes.STRING,
             references: {
-                // add armor info here after armor model is created
+                model: 'armor',
+                key: 'id'
             }
         },
         character_consumable: {
