@@ -55,14 +55,14 @@ Character.init(
             }
         },
         character_weapon: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             references: {
                 model: 'weapon',
                 key: 'id'
             }
         },
         character_armor: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             references: {
                 model: 'armor',
                 key: 'id'
