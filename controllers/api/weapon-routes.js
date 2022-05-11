@@ -35,7 +35,7 @@ router.post('/', (req, res) => {
       weapon_rating: req.body.weapon_rating
     })
       .then(dbData => res.json(dbData))
-      .catch(dbData => {
+      .catch(err => {
         console.log(err);
         res.status(400).json(err);
       })
@@ -56,4 +56,10 @@ router.delete('/:id', (req, res) => {
     }
     res.json(dbData)
   })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  })
 })
+
+module.exports = router;
