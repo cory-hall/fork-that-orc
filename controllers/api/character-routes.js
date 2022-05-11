@@ -2,12 +2,6 @@ const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Armor, Character, Consumables, Inventory, User, Weapons } = require('../../models');
 
-module.exports = router;
-
-
-
-
-
 // create character
 router.post('/', (req, res) => {
     Character.create({
@@ -39,7 +33,9 @@ router.get('/', (req, res) => {
 // get one character from user
 router.get('/:id', (req, res) => {
     Character.findOne({
-
+        where: {
+            id: req.params.id
+        }
     })
     .then(userData => {
         res.json(userData)
@@ -53,7 +49,9 @@ router.get('/:id', (req, res) => {
 // update character trait
 router.put('/', (req, res) => {
     Character.update({
-
+        where: {
+            id: req.params.id
+        }
     })
     .then(userData => {
         res.json(userData)
@@ -67,7 +65,9 @@ router.put('/', (req, res) => {
 // delete character
 router.delete('/:id', (req, res) => {
     Character.destroy({
-
+        where: {
+            id: req.params.id
+        }
     })
     .then(userData => {
         res.json(userData)
@@ -78,3 +78,4 @@ router.delete('/:id', (req, res) => {
     })
 })
 
+module.exports = router;
