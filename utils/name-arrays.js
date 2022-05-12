@@ -1,4 +1,4 @@
-const randNum = require('./randomInt');
+const randomInt = require('./randomInt');
 
 const firstName = [
   'The Butcher',
@@ -20,10 +20,10 @@ const lastName = [
 // }
 
 const randomName = () => {
-  let randomFirst = randNum(firstName);
-  let randomLast = randNum(lastName);
+  const randomFirst = firstName[randomInt(firstName)];
+  const randomLast = lastName[randomInt(lastName)];
 
-  return rand = randomFirst + " " + randomLast;
+  return randomFirst + " " + randomLast;
 }
 
 
