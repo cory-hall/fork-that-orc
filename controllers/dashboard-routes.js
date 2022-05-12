@@ -21,4 +21,8 @@ router.get('/', withAuth, (req, res) => {
     });
 });
 
+router.get('/charcreate', (req, res) => {
+  res.render('charcreate');
+})
+
 module.exports = router;

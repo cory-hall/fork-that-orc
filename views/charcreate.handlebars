@@ -1,0 +1,60 @@
+<form class="char-sheet">
+  <header class="char-header">
+    <section class="char">
+      <label for="charname">Character Name:</label>
+      <input name="charname" type="textarea" class="charname-input">
+      <button type="submit" class="name-btn">Randomize</button>
+    </section>
+    <section class="char">
+      <label for="charclass">Pick Your Class:</label>
+      <select name="charclass" id="charclass" class="charclass-input">
+        <option value="warrior">Warrior</option>
+        <option value="rogue">Rogue</option>
+        <option value="mage">Mage</option>
+      </select>
+    </section>
+  </header>
+
+  <h1 class="char-h1">Attributes</h1>
+  <section class="section">
+    <section class="health-stats">
+      <div class="card">
+        <p>Health</p>
+        <p>100</p>
+      </div>
+      <div class="card">
+        <p>Mana</p>
+        <p>100</p>
+      </div>
+    </section>
+    <section class="primary-stats">
+      <div class="card">
+        <p>Strength</p>
+        <p>100</p>
+      </div>
+      <div class="card">
+        <p>Dexterity</p>
+        <p>100</p>
+      </div>
+      <div class="card">
+        <p>Intelligence</p>
+        <p>100</p>
+      </div>
+    </section>
+  </section>
+
+  <h1 class="char-h1">Gear</h1>
+  <section class="section">
+    <section class="card">
+      <p class="weapon-name">Steel Axe</p>
+      <p class="weapon-rating">100</p>
+    </section>
+    <section class="card">
+      <p class="armor-name">Leather Armor</p>
+      <p class="armor-rating">100</p>
+    </section>
+  </section>
+  <button type="submit" class="btn roll-char">Roll A Character</button>
+</form>
+
+<script src="/javascript/char-page.js"></script>
