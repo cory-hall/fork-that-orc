@@ -1,3 +1,4 @@
+// global name arrays
 const firstName = [
   'The Butcher',
   'Garrosh',
@@ -10,6 +11,8 @@ const lastName = [
   'Carter'
 ];
 
+// function to return a random name from both name arrays
+// by using the randomInt function
 function randomName() {
 
   const randomFirst = firstName[randomInt(firstName.length)];
@@ -18,10 +21,26 @@ function randomName() {
   return randomFirst + " " + randomLast;
 };
 
+// simply returns a 'random' number
 function randomInt(num) {
   return Math.floor(Math.random() * num);
 };
 
+// this function places a random name in the text area on the document
+const randomNameHandler = (event) => {
+  event.preventDefault();
+
+  const nameArea = document.querySelector('input[name="charname"]');
+
+  const name = randomName();
+
+  nameArea.value = name;
+  console.log(name)
+};
+
+
+// this function is called on each char randomize and clears the populated 
+// stat fields
 function clearFields() {
   const healthCard = document.querySelector('#health');
   const manaCard = document.querySelector('#mana');
@@ -44,20 +63,8 @@ function clearFields() {
   }
 }
 
-
-const randomNameHandler = (event) => {
-  event.preventDefault();
-
-  const nameArea = document.querySelector('input[name="charname"]');
-
-  const name = randomName();
-
-  nameArea.value = name;
-  console.log(name)
-};
-
-
-const rollCharacterHandler = (event) => {
+// this function generates the stat rolls
+const rollStatHandler = (event) => {
   event.preventDefault();
 
   clearFields();
@@ -115,8 +122,8 @@ const rollCharacterHandler = (event) => {
   strChild.innerHTML = str;
   dexChild.innerHTML = dex;
   intChild.innerHTML = int;
-}
+};
 
 document.querySelector('.name-btn').addEventListener('click', randomNameHandler);
-document.querySelector('.roll-char').addEventListener('click', rollCharacterHandler);
+document.querySelector('.roll-char').addEventListener('click', rollStatHandler);
 
