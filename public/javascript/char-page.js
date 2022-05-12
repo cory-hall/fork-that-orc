@@ -24,11 +24,24 @@ function randomInt(num) {
 
 function clearFields() {
   const healthCard = document.querySelector('#health');
-  const childDiv = healthCard.getElementsByTagName('p')[1];
+  const manaCard = document.querySelector('#mana');
+  const strCard = document.querySelector('#strength');
+  const dexCard = document.querySelector('#dexterity');
+  const intCard = document.querySelector('#intelligence');
 
-if (childDiv) {
-  healthCard.removeChild(childDiv);
-}
+  const healthChild = healthCard.getElementsByTagName('p')[1];
+  const manaChild = manaCard.getElementsByTagName('p')[1];
+  const strChild = strCard.getElementsByTagName('p')[1];
+  const dexChild = dexCard.getElementsByTagName('p')[1];
+  const intChild = intCard.getElementsByTagName('p')[1];
+
+  if (healthChild && manaChild && strChild && dexChild && intChild) {
+    healthCard.removeChild(healthChild);
+    manaCard.removeChild(manaChild);
+    strCard.removeChild(strChild);
+    dexCard.removeChild(dexChild);
+    intCard.removeChild(intChild);
+  }
 }
 
 
