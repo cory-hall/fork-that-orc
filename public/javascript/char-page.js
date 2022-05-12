@@ -37,8 +37,16 @@ const randomNameHandler = (event) => {
 const rollCharacterHandler = (event) => {
   event.preventDefault();
 
+  const healthCard = document.querySelector('#health');
+  const manaCard = document.querySelector('#mana');
+  const strCard = document.querySelector('#strength');
+  const dexCard = document.querySelector('#dexterity');
+  const intCard = document.querySelector('#intelligence');
+  const charClass = document.querySelector('#charclass').value;
 
+  console.log(charClass);
 }
 
 document.querySelector('.name-btn').addEventListener('click', randomNameHandler);
+document.querySelector('.roll-char').addEventListener('click', rollCharacterHandler);
 
