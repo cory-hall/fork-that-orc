@@ -76,6 +76,23 @@ const rollCharacterHandler = (event) => {
       var str = randomInt(10) + 10;
       var dex = randomInt(10) + 5;
       var int = randomInt(10);
+      console.log('warrior');
+      break;
+    case 'rogue':
+      var health = randomInt(100) + 25;
+      var mana = randomInt(100) + 25;
+      var str = randomInt(10) + 5;
+      var dex = randomInt(10) + 5;
+      var int = randomInt(10) + 5;
+      console.log('rogue');
+      break;
+    case 'mage':
+      var health = randomInt(100);
+      var mana = randomInt(100) + 50;
+      var str = randomInt(10);
+      var dex = randomInt(10) + 5;
+      var int = randomInt(10) + 10;
+      console.log('mage');
       break;
     default:
       break;
