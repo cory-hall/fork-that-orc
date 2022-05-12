@@ -9,20 +9,28 @@
     font-family: sans-serif;
     color: #333;
   }
+
+  .wrapper {
+    width: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
   
   a {
     text-decoration: none;
-    color: #225ca3;
+    color: darkred;
     font-weight: bold;
-    transition: color .1s;
+    font-size: 1.5rem;
   }
   
   a:hover {
-    color: #3486eb;
+    color: crimson;
   }
   
-  button {
-    background-color: #225ca3;
+  .btn {
+    background-color: darkred;
     border: 0;
     padding: 1%;
     color: white;
@@ -33,7 +41,32 @@
   }
   
   button:hover {
-    background-color: #3486eb;
+    background-color: crimson;
+  }
+
+  .login-link{
+    margin-right: 20px;
+  }
+
+
+  .form {
+  }
+
+  .card-header {
+    color: darkred;
+  }
+
+
+  .form-label {
+    margin-top: 10px;
+  }
+
+  .signup-btn {
+    margin-left: 10px;
+  }
+
+  .login-btn {
+    margin-left: 10px;
   }
   
   .post-list {
@@ -75,7 +108,7 @@
   }
   
   header {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 2px solid black;
     display: flex;
     justify-content: space-between;
     align-items: center;

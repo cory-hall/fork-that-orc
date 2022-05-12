@@ -3,7 +3,7 @@ const sequelize = require('../../config/connection');
 const { Armor, Character, Consumables, Inventory, User, Weapons } = require('../../models');
 
 // create user route
-router.post('/signup', (req, res) => {
+router.post('/', (req, res) => {
     User.create({
         username: req.body.username,
         password: req.body.password
@@ -26,7 +26,9 @@ router.post('/signup', (req, res) => {
 // log-in route
 router.post('/login', (req, res) => {
     User.findOne({
-        where: req.body.username
+        where: {
+            username: req.body.username
+        }
     })
     .then(userData => {
         if (!userData) {
