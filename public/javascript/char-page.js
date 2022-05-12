@@ -44,7 +44,21 @@ const rollCharacterHandler = (event) => {
   const intCard = document.querySelector('#intelligence');
   const charClass = document.querySelector('#charclass').value;
 
-  console.log(charClass);
+  switch (charClass) {
+    case 'warrior':
+      var health = randomInt(100) + 50;
+      const mana = randomInt(100);
+      const str = randomInt(10) + 10;
+      const dex = randomInt(10) + 5;
+      const int = randomInt(10);
+      break;
+    default:
+      break;
+  };
+
+  const healthChild = document.createElement("p")
+  healthCard.append(healthChild);
+  healthChild.innerHTML = health;
 }
 
 document.querySelector('.name-btn').addEventListener('click', randomNameHandler);
