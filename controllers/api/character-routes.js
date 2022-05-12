@@ -5,7 +5,7 @@ const { Armor, Character, Consumables, Inventory, User, Weapons } = require('../
 // create character
 router.post('/', (req, res) => {
     Character.create({
-
+        
     })
     .then(userData => {
         res.json(userData)
