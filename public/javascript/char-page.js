@@ -164,31 +164,6 @@ const randomArmHandler = (event) => {
   }
 }
 
-
-// this function is called on each char randomize and clears the populated 
-// stat fields
-// function clearFields() {
-//   const healthCard = document.querySelector('#health');
-//   const manaCard = document.querySelector('#mana');
-//   const strCard = document.querySelector('#strength');
-//   const dexCard = document.querySelector('#dexterity');
-//   const intCard = document.querySelector('#intelligence');
-
-//   const healthChild = healthCard.getElementsByTagName('p')[1];
-//   const manaChild = manaCard.getElementsByTagName('p')[1];
-//   const strChild = strCard.getElementsByTagName('p')[1];
-//   const dexChild = dexCard.getElementsByTagName('p')[1];
-//   const intChild = intCard.getElementsByTagName('p')[1];
-
-//   if (healthChild && manaChild && strChild && dexChild && intChild) {
-//     healthCard.removeChild(healthChild);
-//     manaCard.removeChild(manaChild);
-//     strCard.removeChild(strChild);
-//     dexCard.removeChild(dexChild);
-//     intCard.removeChild(intChild);
-//   }
-// }
-
 // this function generates the stat rolls
 const rollStatHandler = (event) => {
   event.preventDefault();
