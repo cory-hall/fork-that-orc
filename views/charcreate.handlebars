@@ -18,34 +18,52 @@
   <h1 class="char-h1">Attributes</h1>
   <section class="section">
     <section class="health-stats">
-      <div class="card" id="health">
-        <p>Health</p>
+      <div class="top-card">
+        <label for="health" class="top-input">Health</label>
+        <input name="health" type="input" class="top-input">
       </div>
-      <div class="card" id="mana">
-        <p>Mana</p>
+      <div class="top-card">
+        <label for="mana" class="top-input">Mana</label>
+        <input name="mana" type="input" class="top-input">
       </div>
     </section>
+
     <section class="primary-stats">
-      <div class="card" id="strength">
-        <p>Strength</p>
+      <div class="top-card">
+        <label for="str" class="top-input">Strength</label>
+        <input name="str" type="input" class="top-input">
       </div>
-      <div class="card" id="dexterity">
-        <p>Dexterity</p>
+      <div class="top-card">
+        <label for="dex" class="top-input">Dexterity</label>
+        <input name="dex" type="input" class="top-input">
       </div>
-      <div class="card" id="intelligence">
-        <p>Intelligence</p>
+      <div class="top-card">
+        <label for="int" class="top-input">Intelligence</label>
+        <input name="int" type="input" class="top-input">
       </div>
     </section>
   </section>
 
   <h1 class="char-h1">Gear</h1>
   <section class="section">
-    <section class="card" id="weapon">
+    <section class="card bot-card" id="weapon">
+      <label for="wepname">Weapon Name: </label>
+      <input name="wepname" type="textarea" class="bot-input">
+      <label for="weprating">Damage: </label>
+      <input name="weprating" type="textarea" class="bot-input">
     </section>
-    <section class="card" id="armor">
-      <p class="armor-name">Leather Armor</p>
+    <section class="card bot-card" id="armor">
+      <label for="armname">Armor Name: </label>
+      <input name="armname" type="textarea" class="bot-input">
+      <label for="armrating">Defense: </label>
+      <input name="armrating" type="textarea" class="bot-input">
+
     </section>
   </section>
+  <div class="bot-btn">
+    <button type="submit" class="btn wep-btn">Randomize Weapon</button>
+    <button type="submit" class="btn arm-btn">Randomize Armor</button>
+  </div>
   <button type="submit" class="btn roll-char">Roll A Character</button>
 </form>
 
