@@ -1,3 +1,4 @@
+
 // global name arrays
 const firstName = [
   'The Butcher',
@@ -25,7 +26,7 @@ const warriorWeapon = [
 const warriorArmor = [
   {
     name: "Iron Armor",
-    rating: 4 
+    rating: 4
   },
   {
     name: "Dragonscale Armor",
@@ -105,33 +106,61 @@ const randomNameHandler = (event) => {
   nameArea.value = name;
 };
 
+// picks a random weapon from the class appropriate weapon array
+const randomWepHandler = (event) => {
+  event.preventDefault();
 
-// this function is called on each char randomize and clears the populated 
-// stat fields
-function clearFields() {
-  const healthCard = document.querySelector('#health');
-  const manaCard = document.querySelector('#mana');
-  const strCard = document.querySelector('#strength');
-  const dexCard = document.querySelector('#dexterity');
-  const intCard = document.querySelector('#intelligence');
-  const wepCard = document.querySelector('#weapon');
+  const wepNameArea = document.querySelector('input[name="wepname"]');
+  const wepRatingArea = document.querySelector('input[name="weprating"]');
+  const charClass = document.querySelector('#charclass').value;
 
-  const healthChild = healthCard.getElementsByTagName('p')[1];
-  const manaChild = manaCard.getElementsByTagName('p')[1];
-  const strChild = strCard.getElementsByTagName('p')[1];
-  const dexChild = dexCard.getElementsByTagName('p')[1];
-  const intChild = intCard.getElementsByTagName('p')[1];
-  const wepNameChild = wepCard.getElementsByTagName('p')[0];
-  const wepRatingChild = wepCard.getElementsByTagName('p')[1];
+  switch (charClass) {
+    case "warrior":
+      var weapon = warriorWeapon[randomInt(warriorWeapon.length)];
+      wepNameArea.value = weapon.name;
+      wepRatingArea.value = weapon.rating;
+      break;
+    case "rogue":
+      var weapon = rogueWeapon[randomInt(rogueWeapon.length)];
+      wepNameArea.value = weapon.name;
+      wepRatingArea.value = weapon.rating;
+      break;
+    case "mage":
+      var weapon = mageWeapon[randomInt(mageWeapon.length)];
+      wepNameArea.value = weapon.name;
+      wepRatingArea.value = weapon.rating;
+      break;
+    default:
+      break;
+  }
+};
 
-  if (healthChild && manaChild && strChild && dexChild && intChild) {
-    healthCard.removeChild(healthChild);
-    manaCard.removeChild(manaChild);
-    strCard.removeChild(strChild);
-    dexCard.removeChild(dexChild);
-    intCard.removeChild(intChild);
-    wepCard.removeChild(wepNameChild);
-    wepCard.removeChild(wepRatingChild);
+// picks a random armor from the class appropriate armor array
+const randomArmHandler = (event) => {
+  event.preventDefault();
+
+  const armNameArea = document.querySelector('input[name="armname"]');
+  const armRatingArea = document.querySelector('input[name="armrating"]');
+  const charClass = document.querySelector('#charclass').value;
+
+  switch (charClass) {
+    case "warrior":
+      var armor = warriorArmor[randomInt(warriorArmor.length)];
+      armNameArea.value = armor.name;
+      armRatingArea.value = armor.rating;
+      break;
+    case "rogue":
+      var armor = rogueArmor[randomInt(rogueArmor.length)];
+      armNameArea.value = armor.name;
+      armRatingArea.value = armor.rating;
+      break;
+    case "mage":
+      var armor = mageArmor[randomInt(mageArmor.length)];
+      armNameArea.value = armor.name;
+      armRatingArea.value = armor.rating;
+      break;
+    default:
+      break;
   }
 }
 
@@ -139,13 +168,13 @@ function clearFields() {
 const rollStatHandler = (event) => {
   event.preventDefault();
 
-  clearFields();
+  // clearFields();
 
-  const healthCard = document.querySelector('#health');
-  const manaCard = document.querySelector('#mana');
-  const strCard = document.querySelector('#strength');
-  const dexCard = document.querySelector('#dexterity');
-  const intCard = document.querySelector('#intelligence');
+  const healthField = document.querySelector('input[name="health"]');
+  const manaField = document.querySelector('input[name="mana"]');
+  const strField = document.querySelector('input[name="str"]');
+  const dexField = document.querySelector('input[name="dex"]');
+  const intField = document.querySelector('input[name="int"]');
   const charClass = document.querySelector('#charclass').value;
 
   switch (charClass) {
@@ -181,57 +210,18 @@ const rollStatHandler = (event) => {
     str: str,
     dex: dex,
     int: int
-  }
+  };
 
-  const healthChild = document.createElement("p");
-  const manaChild = document.createElement("p")
-  const strChild = document.createElement("p")
-  const dexChild = document.createElement("p")
-  const intChild = document.createElement("p")
-
-  healthCard.append(healthChild);
-  manaCard.append(manaChild);
-  strCard.append(strChild);
-  dexCard.append(dexChild);
-  intCard.append(intChild);
-
-  healthChild.innerHTML = health;
-  manaChild.innerHTML = mana;
-  strChild.innerHTML = str;
-  dexChild.innerHTML = dex;
-  intChild.innerHTML = int;
-
-  rollGear(statObj)
+  healthField.value = health;
+  manaField.value = mana;
+  strField.value = str;
+  dexField.value = dex;
+  intField.value = int;
 };
 
-function rollGear(statObj) {
-  const charClass = statObj.charClass;
-
-  var { weapon, armor } = chooseGear(charClass);
-
-  statObj = {
-    weapon: weapon,
-    armor: armor
-  }
-
-  
-}
-
-function chooseGear(string) {
-  if (string === "warrior") {
-    var weapon = warriorWeapon[randomInt(warriorWeapon.length)];
-    var armor = warriorArmor[randomInt(warriorArmor.length)];
-  } else if (string === "rogue") {
-    var weapon = rogueWeapon[randomInt(rogueWeapon.length)];
-    var armor = rogueArmor[randomInt(rogueArmor.length)];
-  } else {
-    var weapon = mageWeapon[randomInt(mageWeapon.length)];
-    var armor = mageArmor[randomInt(mageArmor.length)];
-  }
-
-  return { weapon, armor };
-}
 
 document.querySelector('.name-btn').addEventListener('click', randomNameHandler);
 document.querySelector('.roll-char').addEventListener('click', rollStatHandler);
+document.querySelector('.wep-btn').addEventListener('click', randomWepHandler);
+document.querySelector('.arm-btn').addEventListener('click', randomArmHandler);
 

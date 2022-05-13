@@ -261,6 +261,23 @@ footer {
   width: 40%;
 }
 
+.top-card {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  border: 2px black solid;
+  border-radius: 10px;
+  padding: 30px;
+  margin: 20px;
+
+}
+
+.top-input {
+  font-size: x-large;
+  text-align: center;
+}
+
 .primary-stats {
   display: flex;
   flex-direction: column;
@@ -281,6 +298,20 @@ footer {
   height: 100px;
 }
 
+.bot-card {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  padding: 100px;
+  margin: 12px;
+}
+
+.bot-input {
+  width: 100%;
+  padding: 12px;
+
+}
+
 .card p {
   font-size: larger;
   font-weight: bolder;
@@ -297,6 +328,13 @@ footer {
   justify-content: space-evenly;
   margin-bottom: 20px;
   border-bottom: 3px black solid;
+}
+
+.bot-btn {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .roll-char {
