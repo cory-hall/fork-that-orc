@@ -214,6 +214,10 @@ function rollGear(statObj) {
     armor: armor
   }
 
+  const wepCard = document.querySelector('#weapon');
+
+  const wepNameChild = document.createElement("p");
+  const wepRatingChild = document.createElement("p");
   
 }
 
