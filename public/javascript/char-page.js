@@ -1,3 +1,4 @@
+
 // global name arrays
 const firstName = [
   'The Butcher',
@@ -25,7 +26,7 @@ const warriorWeapon = [
 const warriorArmor = [
   {
     name: "Iron Armor",
-    rating: 4 
+    rating: 4
   },
   {
     name: "Dragonscale Armor",
@@ -105,7 +106,7 @@ const randomNameHandler = (event) => {
   nameArea.value = name;
 };
 
-const randomWepHandler = (event, ) => {
+const randomWepHandler = (event) => {
   event.preventDefault();
 
   const wepNameArea = document.querySelector('input[name="wepname"]');
@@ -118,6 +119,36 @@ const randomWepHandler = (event, ) => {
       wepNameArea.value = weapon.name;
       wepRatingArea.value = weapon.rating;
       break;
+    case "rogue":
+      var weapon = rogueWeapon[randomInt(rogueWeapon.length)];
+      wepNameArea.value = weapon.name;
+      wepRatingArea.value = weapon.rating;
+      break;
+    case "mage":
+      var weapon = mageWeapon[randomInt(mageWeapon.length)];
+      wepNameArea.value = weapon.name;
+      wepRatingArea.value = weapon.rating;
+      break;
+    default:
+      break;
+  }
+};
+
+const randomArmHandler = (event) => {
+  event.preventDefault();
+
+  const armNameArea = document.querySelector('input[name="armname"]');
+  const armRatingArea = document.querySelector('input[name="armrating"]');
+  const charClass = document.querySelector('#charclass').value;
+
+  switch (charClass) {
+    case "warrior":
+      var armor = warriorArmor[randomInt(warriorArmor.length)];
+      armNameArea.value = armor.name;
+      armRatingArea.value = armor.rating;
+      break;
+    case "rogue":
+
   }
 }
 
@@ -256,4 +287,5 @@ function chooseGear(string) {
 document.querySelector('.name-btn').addEventListener('click', randomNameHandler);
 document.querySelector('.roll-char').addEventListener('click', rollStatHandler);
 document.querySelector('.wep-btn').addEventListener('click', randomWepHandler);
+document.querySelector('.arm-btn').addEventListener('click', randomArmHandler);
 
