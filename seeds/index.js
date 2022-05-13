@@ -4,6 +4,7 @@ const seedCharacter = require('./character-seeds');
 
 
 
+
 const sequelize = require('../config/connection');
 
 const seedAll = async () => {
@@ -16,8 +17,10 @@ const seedAll = async () => {
     await seedArmors();
     console.log('--------------');
 
+
     await seedCharacter();
     console.log('--------------');
+
 
     process.exit(0);
 };
