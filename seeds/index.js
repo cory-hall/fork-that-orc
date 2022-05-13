@@ -1,6 +1,6 @@
 const seedWeapons = require('./weapon-seeds');
 const seedArmors = require('./armor-seeds');
-const seedConsumables = require('./consumable-seeds');
+const seedCharacter = require('./character-seeds');
 
 
 
@@ -16,7 +16,7 @@ const seedAll = async () => {
     await seedArmors();
     console.log('--------------');
 
-    await seedConsumables();
+    await seedCharacter();
     console.log('--------------');
 
     process.exit(0);
