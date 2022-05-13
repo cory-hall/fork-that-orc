@@ -40,11 +40,24 @@
 
   <h1 class="char-h1">Gear</h1>
   <section class="section">
-    <section class="card" id="weapon">
+    <section class="card bot-card" id="weapon">
+      <label for="wepname">Weapon Name: </label>
+      <input name="wepname" type="textarea" class="bot-input">
+      <label for="weprating">Damage: </label>
+      <input name="weprating" type="textarea" class="bot-input">
     </section>
-    <section class="card" id="armor">
+    <section class="card bot-card" id="armor">
+      <label for="armname">Armor Name: </label>
+      <input name="armname" type="textarea" class="bot-input">
+      <label for="armrating">Defense: </label>
+      <input name="armrating" type="textarea" class="bot-input">
+
     </section>
   </section>
+  <div class="bot-btn">
+  <button type="submit" class="btn wep-btn">Randomize Weapon</button>
+  <button type="submit" class="btn arm-btn">Randomize Armor</button>
+  </div>
   <button type="submit" class="btn roll-char">Roll A Character</button>
 </form>
 

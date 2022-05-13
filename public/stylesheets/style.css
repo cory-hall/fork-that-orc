@@ -281,6 +281,20 @@ footer {
   height: 100px;
 }
 
+.bot-card {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  padding: 100px;
+  margin: 12px;
+}
+
+.bot-input {
+  width: 100%;
+  padding: 12px;
+  
+}
+
 .card p {
   font-size: larger;
   font-weight: bolder;
@@ -297,6 +311,13 @@ footer {
   justify-content: space-evenly;
   margin-bottom: 20px;
   border-bottom: 3px black solid;
+}
+
+.bot-btn {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .roll-char {

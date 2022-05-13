@@ -105,6 +105,22 @@ const randomNameHandler = (event) => {
   nameArea.value = name;
 };
 
+const randomWepHandler = (event, ) => {
+  event.preventDefault();
+
+  const wepNameArea = document.querySelector('input[name="wepname"]');
+  const wepRatingArea = document.querySelector('input[name="weprating"]');
+  const charClass = document.querySelector('#charclass').value;
+
+  switch (charClass) {
+    case "warrior":
+      var weapon = warriorWeapon[randomInt(warriorWeapon.length)];
+      wepNameArea.value = weapon.name;
+      wepRatingArea.value = weapon.rating;
+      break;
+  }
+}
+
 
 // this function is called on each char randomize and clears the populated 
 // stat fields
@@ -186,13 +202,13 @@ const rollStatHandler = (event) => {
     str: str,
     dex: dex,
     int: int
-  }
+  };
 
   const healthChild = document.createElement("p");
-  const manaChild = document.createElement("p")
-  const strChild = document.createElement("p")
-  const dexChild = document.createElement("p")
-  const intChild = document.createElement("p")
+  const manaChild = document.createElement("p");
+  const strChild = document.createElement("p");
+  const dexChild = document.createElement("p");
+  const intChild = document.createElement("p");
 
   healthCard.append(healthChild);
   manaCard.append(manaChild);
@@ -206,7 +222,7 @@ const rollStatHandler = (event) => {
   dexChild.innerHTML = dex;
   intChild.innerHTML = int;
 
-  rollGear(statObj)
+  rollGear(statObj);
 };
 
 function rollGear(statObj) {
@@ -218,28 +234,9 @@ function rollGear(statObj) {
     weapon: weapon,
     armor: armor
   }
-
-  const wepCard = document.querySelector('#weapon');
-
-  const wepNameChild = document.createElement("p");
-  const wepRatingChild = document.createElement("p");
-
-
-  wepCard.append(wepNameChild);
-  wepNameChild.innerHTML = "Name: " + weapon.name;
-  wepCard.append(wepRatingChild);
-  wepRatingChild.innerHTML = "Damage " + weapon.rating;
-
-  const armCard = document.querySelector('#armor');
-
-  const armNameChild = document.createElement("p");
-  const armRatingChild = document.createElement("p");
-
-  armCard.append(armNameChild);
-  armNameChild.innerHTML = "Name: " + armor.name;
-  armCard.append(armRatingChild);
-  armRatingChild.innerHTML = "Defense " + armor.rating;
 }
+
+
 
 function chooseGear(string) {
   if (string === "warrior") {
@@ -258,4 +255,5 @@ function chooseGear(string) {
 
 document.querySelector('.name-btn').addEventListener('click', randomNameHandler);
 document.querySelector('.roll-char').addEventListener('click', rollStatHandler);
+document.querySelector('.wep-btn').addEventListener('click', randomWepHandler);
 
