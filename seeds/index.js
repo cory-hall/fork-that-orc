@@ -1,5 +1,7 @@
 const seedWeapons = require('./weapon-seeds');
 const seedArmors = require('./armor-seeds');
+const seedCharacter = require('./character-seeds');
+
 
 
 
@@ -14,6 +16,11 @@ const seedAll = async () => {
 
     await seedArmors();
     console.log('--------------');
+
+
+    await seedCharacter();
+    console.log('--------------');
+
 
     process.exit(0);
 };
