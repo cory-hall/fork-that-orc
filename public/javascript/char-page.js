@@ -115,6 +115,7 @@ function clearFields() {
   const dexCard = document.querySelector('#dexterity');
   const intCard = document.querySelector('#intelligence');
   const wepCard = document.querySelector('#weapon');
+  const armCard = document.querySelector('#armor');
 
   const healthChild = healthCard.getElementsByTagName('p')[1];
   const manaChild = manaCard.getElementsByTagName('p')[1];
@@ -123,6 +124,8 @@ function clearFields() {
   const intChild = intCard.getElementsByTagName('p')[1];
   const wepNameChild = wepCard.getElementsByTagName('p')[0];
   const wepRatingChild = wepCard.getElementsByTagName('p')[1];
+  const armNameChild = armCard.getElementsByTagName('p')[0];
+  const armRatingChild = armCard.getElementsByTagName('p')[1];
 
   if (healthChild && manaChild && strChild && dexChild && intChild) {
     healthCard.removeChild(healthChild);
@@ -132,6 +135,8 @@ function clearFields() {
     intCard.removeChild(intChild);
     wepCard.removeChild(wepNameChild);
     wepCard.removeChild(wepRatingChild);
+    armCard.removeChild(armNameChild);
+    armCard.removeChild(armRatingChild);
   }
 }
 
@@ -218,7 +223,22 @@ function rollGear(statObj) {
 
   const wepNameChild = document.createElement("p");
   const wepRatingChild = document.createElement("p");
-  
+
+
+  wepCard.append(wepNameChild);
+  wepNameChild.innerHTML = "Name: " + weapon.name;
+  wepCard.append(wepRatingChild);
+  wepRatingChild.innerHTML = "Damage " + weapon.rating;
+
+  const armCard = document.querySelector('#armor');
+
+  const armNameChild = document.createElement("p");
+  const armRatingChild = document.createElement("p");
+
+  armCard.append(armNameChild);
+  armNameChild.innerHTML = "Name: " + armor.name;
+  armCard.append(armRatingChild);
+  armRatingChild.innerHTML = "Defense " + armor.rating;
 }
 
 function chooseGear(string) {
