@@ -32,7 +32,8 @@ router.post('/', (req, res) => {
     Weapons.create({
       weapon_name: req.body.weapon_name,
       weapon_class: req.body.weapon_class,
-      weapon_rating: req.body.weapon_rating
+      weapon_rating: req.body.weapon_rating,
+      weapon_image: req.body.weapon_image
     })
       .then(dbData => res.json(dbData))
       .catch(err => {

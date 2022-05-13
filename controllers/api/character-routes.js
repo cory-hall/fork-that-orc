@@ -1,11 +1,19 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Armor, Character, Consumables, Inventory, User, Weapons } = require('../../models');
+const { Armors, Character, Consumables, Inventory, User, Weapons } = require('../../models');
 
 // create character
 router.post('/', (req, res) => {
     Character.create({
-        
+        character_name: req.body.character_name,
+        character_class: req.body.character_class,
+        health: req.body.health,
+        mana: req.body.mana,
+        strength: req.body.strength,
+        dexterity: req.body.strength,
+        intelligence: req.body.intelligence,
+        character_weapon: req.body.character_weapon,
+        character_armor: req.body.character_armor
     })
     .then(userData => {
         res.json(userData)
@@ -18,17 +26,14 @@ router.post('/', (req, res) => {
 
 // get all characters from user
 router.get('/', (req, res) => {
-    Character.findAll({
+    Character.findAll({})
+    .then(userData => res.json(userData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    }); 
+});
 
-    })
-    .then(userData => {
-        res.json(userData)
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-    })
-})
 
 // get one character from user
 router.get('/:id', (req, res) => {
