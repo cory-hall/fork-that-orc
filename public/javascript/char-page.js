@@ -148,7 +148,17 @@ const randomArmHandler = (event) => {
       armRatingArea.value = armor.rating;
       break;
     case "rogue":
-
+      var armor = rogueArmor[randomInt(rogueArmor.length)];
+      armNameArea.value = armor.name;
+      armRatingArea.value = armor.rating;
+      break;
+    case "mage":
+      var armor = mageArmor[randomInt(mageArmor.length)];
+      armNameArea.value = armor.name;
+      armRatingArea.value = armor.rating;
+      break;
+    default:
+      break;
   }
 }
 
