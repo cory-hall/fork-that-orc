@@ -130,8 +130,8 @@ function clearFields() {
     strCard.removeChild(strChild);
     dexCard.removeChild(dexChild);
     intCard.removeChild(intChild);
-    wepNameChild.innerHTML = "Name: ";
-    wepRatingChild.innerHTML = "Damage: ";
+    wepCard.removeChild(wepNameChild);
+    wepCard.removeChild(wepRatingChild);
   }
 }
 
@@ -214,19 +214,7 @@ function rollGear(statObj) {
     armor: armor
   }
 
-  const wepCard = document.querySelector('#weapon');
-  const armCard = document.querySelector('#armor');
-
-  const wepNameEl = document.createElement("p");
-  const wepRatingEl = document.createElement("p");
-
-  wepCard.append(wepNameEl);
-  wepCard.append(wepRatingEl);
-
-  wepNameEl.innerHTML += weapon.name;
-  wepRatingEl.innerHTML += weapon.rating;
-
-  console.log(statObj);
+  
 }
 
 function chooseGear(string) {
