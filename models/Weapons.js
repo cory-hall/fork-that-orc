@@ -22,6 +22,10 @@ Weapon.init(
         weapon_rating: {
             type: DataTypes.INTEGER,
             allowNull: false
+        },
+        weapon_image: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
     },
     {
