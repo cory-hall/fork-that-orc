@@ -25,7 +25,7 @@ Weapon.init(
         },
         weapon_image: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         }
     },
     {
