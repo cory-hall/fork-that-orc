@@ -223,36 +223,7 @@ const rollStatHandler = (event) => {
 
 
 
-// const charPostHandler = (event) => {
-//   event.preventDefault();
 
-//   const name = document.querySelector('input[name="charname"]').value;
-//   const charClass = document.querySelector('#charclass').value;
-//   const health = document.querySelector('input[name="health"]').value;
-//   const mana = document.querySelector('input[name="mana"]').value;
-//   const str = document.querySelector('input[name="str"]').value;
-//   const dex = document.querySelector('input[name="dex"]').value;
-//   const int = document.querySelector('input[name="int"]').value;
-
-//   const response = await fetch('/api/characters', {
-//     method: 'POST',
-//     body: JSON.stringify({
-//       name,
-//       armClass,
-//       rating
-//     }),
-//     headers: {
-//       'Content-Type': 'application/json'
-//     }
-//   });
-
-//   if (response.ok) {
-//     charPostHandler();
-//   } else {
-//     alert(response.statusText);
-//   }
-
-// }
 
 
 document.querySelector('.name-btn').addEventListener('click', randomNameHandler);

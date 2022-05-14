@@ -19,7 +19,6 @@ const wepPostHandler = async (event) => {
 
   if (response.ok) {
     armPostHandler(event);
-    console.log(response)
   } else {
     alert(response.statusText);
   }

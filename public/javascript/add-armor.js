@@ -18,8 +18,7 @@ const armPostHandler = async (event) => {
   });
 
   if (response.ok) {
-    // charPostHandler();
-    console.log(response);
+    charPostHandler(event);
   } else {
     alert(response.statusText);
   }
