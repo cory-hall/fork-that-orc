@@ -25,7 +25,9 @@ router.get('/:id', (req, res) => {
     })
 });
 
+
 router.post('/', (req, res) => {
+
     let weaponSql = sequelize.literal('(SELECT id FROM weapon ORDER BY ID DESC LIMIT 1)');
     let armorSql = sequelize.literal('(SELECT id FROM armor ORDER BY ID DESC LIMIT 1)');
 
