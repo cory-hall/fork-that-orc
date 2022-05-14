@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const db = require('../../config/connection');
 const { Armors, Character, Weapons } = require('../../models');
+const sequelize = require('../../config/connection');
 
 router.get('/', (req, res) => {
     Character.findAll({})
@@ -27,6 +28,9 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
 
+    let weaponSql = sequelize.literal('(SELECT id FROM weapon ORDER BY ID DESC LIMIT 1)');
+    let armorSql = sequelize.literal('(SELECT id FROM armor ORDER BY ID DESC LIMIT 1)');
+
     Character.create({
         character_name: req.body.character_name,
         character_class: req.body.character_class,
@@ -35,11 +39,12 @@ router.post('/', (req, res) => {
         strength: req.body.strength,
         dexterity: req.body.dexterity,
         intelligence: req.body.intelligence,
-        // weapon_id: wep_id,
-        // armor_id: req.body.armor_id,
+        weapon_id: weaponSql,
+        armor_id: armorSql,
         user_id: req.session.user_id
     })
-        .then(userData => res.json(userData))
+
+        .then(userData =>  res.json(userData))
         .catch(err => {
             console.log(err);
             res.status(400).json(err);
