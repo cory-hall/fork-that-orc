@@ -5,19 +5,28 @@ const { Armors, Character, Weapons } = require('../../models');
 let wep_id;
 let arm_id;
 
-router.post('/', (req, res) => {
-    Weapons.findAll({
-        limit: 1,
-        order: [['id', 'DESC']]
+router.get('/', (req, res) => {
+    Character.findAll({})
+    .then(dbData => res.json(dbData))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
     })
-    .then(dbData => (console.log(dbData.id)))
+})
 
-    Armors.findAll({
-        limit: 1,
-        order: [['id', 'DESC']]
-    })
-    .then(dbData => (arm_id = dbData.id))
-    .then(console.log(arm_id))
+router.post('/', (req, res) => {
+    // Weapons.findAll({
+    //     limit: 1,
+    //     order: [['id', 'DESC']]
+    // })
+    // .then(dbData => (console.log(dbData.id)))
+
+    // Armors.findAll({
+    //     limit: 1,
+    //     order: [['id', 'DESC']]
+    // })
+    // .then(dbData => (arm_id = dbData.id))
+    // .then(console.log(arm_id))
     Character.create({
         character_name: req.body.character_name,
         character_class: req.body.character_class,
@@ -26,13 +35,11 @@ router.post('/', (req, res) => {
         strength: req.body.strength,
         dexterity: req.body.dexterity,
         intelligence: req.body.intelligence,
-        character_weapon: wep_id,
-        character_armor: arm_id
     })
         .then(userData =>  res.json(userData))
         .catch(err => {
             console.log(err);
-            res.status(500).json(err);
+            res.status(400).json(err);
         });
 });
 // create character

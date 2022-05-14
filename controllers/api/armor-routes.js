@@ -49,17 +49,17 @@ router.delete('/:id', (req, res) => {
       id: req.params.id
     }
   })
-  .then(dbData => {
-    if (!dbData) {
-      res.status(404).json({ message: 'No armor found with this id' });
-      return;
-    }
-    res.json(dbData)
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  })
+    .then(dbData => {
+      if (!dbData) {
+        res.status(404).json({ message: 'No armor found with this id' });
+        return;
+      }
+      res.json(dbData)
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    })
 })
 
 module.exports = router;

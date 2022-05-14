@@ -54,20 +54,20 @@ Character.init(
                 isNumeric: true
             }
         },
-        character_weapon: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'weapon',
-                key: 'id'
-            }
-        },
-        character_armor: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'armor',
-                key: 'id'
-            }
-        },
+        // character_weapon: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'weapon',
+        //         key: 'id'
+        //     }
+        // },
+        // character_armor: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'armor',
+        //         key: 'id'
+        //     }
+        // },
         // character_consumable: {
         //     type: DataTypes.STRING,
         //      references: {
