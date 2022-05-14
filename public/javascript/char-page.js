@@ -230,5 +230,4 @@ document.querySelector('.name-btn').addEventListener('click', randomNameHandler)
 document.querySelector('.roll-char').addEventListener('click', rollStatHandler);
 document.querySelector('.wep-btn').addEventListener('click', randomWepHandler);
 document.querySelector('.arm-btn').addEventListener('click', randomArmHandler);
-// document.querySelector('.save-char').addEventListener('click', wepPostHandler);
 
