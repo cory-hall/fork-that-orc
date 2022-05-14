@@ -33,7 +33,9 @@ router.post('/', (req, res) => {
         strength: req.body.strength,
         dexterity: req.body.dexterity,
         intelligence: req.body.intelligence,
-        weapon_id: req.query.wep_id,
+        weapon_id: 
+        [sequelize.literal('(SELECT id FROM weapons ORDER BY ID DESC LIMIT 1)'), 'weapon_id'],
+
         armor_id: req.body.armor_id,
         user_id: req.session.user_id
     })
