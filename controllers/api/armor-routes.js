@@ -34,7 +34,7 @@ router.post('/', (req, res) => {
       armor_class: req.body.armor_class,
       armor_rating: req.body.armor_rating
     })
-      .then(dbData => res.json(dbData), res.send(dbData))
+      .then(dbData => res.json(dbData))
       .catch(err => {
         console.log(err);
         res.status(400).json(err);
