@@ -24,7 +24,9 @@ router.get('/:id', (req, res) => {
     })
 });
 
+
 router.post('/', (req, res) => {
+
     Character.create({
         character_name: req.body.character_name,
         character_class: req.body.character_class,
@@ -33,8 +35,8 @@ router.post('/', (req, res) => {
         strength: req.body.strength,
         dexterity: req.body.dexterity,
         intelligence: req.body.intelligence,
-        weapon_id: req.query.wep_id,
-        armor_id: req.body.armor_id,
+        // weapon_id: wep_id,
+        // armor_id: req.body.armor_id,
         user_id: req.session.user_id
     })
         .then(userData =>  res.json(userData))
