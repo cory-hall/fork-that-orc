@@ -74,11 +74,6 @@ button:hover {
   padding: 0;
 }
 
-
-form>div {
-  margin-bottom: 2%;
-}
-
 form label {
   display: block;
 }
@@ -337,9 +332,22 @@ footer {
   width: 100%;
 }
 
-.roll-char {
-  margin-top: 20px;
-  width: 30%;
+.submit-roll {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 10px;
 }
+
+.roll-char, .save-char {
+  width: 40%;
+  align-self: center;
+  margin: 5px;
+}
+
+
+
 
 /* CHARACTER CREATION SCREEN END */

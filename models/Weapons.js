@@ -23,10 +23,10 @@ Weapon.init(
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        weapon_image: {
-            type: DataTypes.STRING,
-            allowNull: false
-        }
+        // weapon_image: {
+        //     type: DataTypes.STRING,
+        //     allowNull: true
+        // }
     },
     {
         sequelize,
