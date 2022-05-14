@@ -39,7 +39,7 @@ router.post('/', (req, res) => {
         // armor_id: req.body.armor_id,
         user_id: req.session.user_id
     })
-        .then(userData =>  res.json(userData))
+        .then(userData => res.json(userData))
         .catch(err => {
             console.log(err);
             res.status(400).json(err);
