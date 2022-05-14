@@ -1,6 +1,6 @@
 //import models
 const Armors = require('./Armors');
-const Character = require('./Character');
+const Character = require('./Hero');
 const Inventory = require('./Inventory');
 const User = require('./User');
 const Weapons = require('./Weapons');
@@ -10,7 +10,7 @@ Weapons.hasMany(Character, {
 });
 
 Character.belongsTo(Weapons, {
-    foreignKey: 'character_id'
+    foreignKey: 'hero_id'
 });
 
 Armors.hasMany(Character, {
@@ -18,7 +18,7 @@ Armors.hasMany(Character, {
 });
 
 Character.belongsTo(Armors, {
-    foreignKey: 'character_id'
+    foreignKey: 'hero_id'
 });
 
 User.hasMany(Character, {
@@ -26,7 +26,7 @@ User.hasMany(Character, {
 })
 
 Character.belongsTo(User, {
-    foreignKey: 'character_id'
+    foreignKey: 'hero_id'
 })
 
 
