@@ -33,6 +33,9 @@ router.post('/', (req, res) => {
         strength: req.body.strength,
         dexterity: req.body.dexterity,
         intelligence: req.body.intelligence,
+        weapon_id: req.query.wep_id,
+        armor_id: req.body.armor_id,
+        user_id: req.session.user_id
     })
         .then(userData =>  res.json(userData))
         .catch(err => {

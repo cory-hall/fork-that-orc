@@ -34,7 +34,10 @@ router.post('/', (req, res) => {
       weapon_class: req.body.weapon_class,
       weapon_rating: req.body.weapon_rating
     })
-      .then(dbData => res.json(dbData))
+      .then(dbData => {
+        res.append("wep_id", dbData.id)
+        res.json(dbData);
+      })
       .catch(err => {
         console.log(err);
         res.status(400).json(err);
