@@ -2,13 +2,13 @@ const router = require('express').Router();
 const { User, Weapons, Armors, Character } = require('../models');
 const withAuth = require('../utils/auth');
 
-// router.get('/', (req, res) => {
-//   res.render('dashboard');
-// })
+router.get('/', (req, res) => {
+  res.render('dashboard', {loggedIn: true});
+})
 
 
 // GET all builds for dashboard view, with withAuth helper
-router.get('/', withAuth, (req, res) => {
+router.get('/user-heros', withAuth, (req, res) => {
   Character.findAll({
     where: {
        // get user_id from session user_id

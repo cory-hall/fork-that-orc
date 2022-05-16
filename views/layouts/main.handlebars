@@ -11,14 +11,12 @@
 <body>
    <div class="wrapper">
       <header>
-         <h1>
-            <a href="/">Homepage</a>
-         </h1>
+         <h1>Welcome</h1>
          <nav>
             {{#if loggedIn}}
             <a href="/dashboard/user-heros" class="allHero-link">See Your Heroes</a>
+            <button id="logout" class="btn-no-style">logout</button>
             {{/if}}
-
 
             <span>
                <button onclick="myFunction()" class="dot"></button>
@@ -40,9 +38,6 @@
 
       <footer>
          Blood and Thunder!
-         {{#if loggedIn}}
-         <button id="logout" class="btn-no-style">logout</button>
-         {{/if}}
       </footer>
    </div>
    {{#if loggedIn}}
