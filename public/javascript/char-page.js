@@ -1,5 +1,4 @@
-var Roll = require('roll'),
-  roll = new Roll();
+
 
 // global name arrays
 const firstName = [
@@ -181,25 +180,25 @@ const rollStatHandler = (event) => {
 
   switch (charClass) {
     case 'warrior':
-      var health = roll.roll('d%') + 50;
-      var mana = roll.roll('d%');
-      var str = roll.roll('2d6') + 10;
-      var dex = roll.roll('2d6') + 5;
-      var int = roll.roll('2d6');
+      var health = randomInt(100) + 50;
+      var mana = randomInt(100) ;
+      var str = randomInt(100)  + 10;
+      var dex = randomInt(100)  + 5;
+      var int = randomInt(100) ;
       break;
     case 'rogue':
-      var health = roll.roll('d%') + 25;
-      var mana = roll.roll('d%') + 25;
-      var str = roll.roll('2d6') + 5;
-      var dex = roll.roll('2d6') + 5;
-      var int = roll.roll('2d6') + 5;
+      var health = randomInt(100) + 25;
+      var mana = randomInt(100)  + 25;
+      var str = randomInt(100)  + 5;
+      var dex = randomInt(100)  + 5;
+      var int = randomInt(100)  + 5;
       break;
     case 'mage':
-      var health = roll.roll('d%');
-      var mana = roll.roll('d%') + 50;
-      var str = roll.roll('2d6');
-      var dex = roll.roll('2d6') + 5;
-      var int = roll.roll('2d6') + 10;
+      var health = randomInt(100) ;
+      var mana = randomInt(100)  + 50;
+      var str = randomInt(100) ;
+      var dex = randomInt(100)  + 5;
+      var int = randomInt(100)  + 10;
       break;
     default:
       break;
