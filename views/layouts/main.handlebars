@@ -12,36 +12,37 @@
    <div class="wrapper">
       <header>
          <h1>
-            <a href="/">Welcome!</a>
+            <a href="/">Homepage</a>
          </h1>
          <nav>
             {{#if loggedIn}}
-            <a href="/dashboard">dashboard</a>
-            <button id="logout" class="btn-no-style">logout</button>
-            {{else}}
-            <a href="/showallheros" class="allHero-link">See All Heroes</a>
+            <a href="/dashboard/user-heros" class="allHero-link">See Your Heroes</a>
             {{/if}}
-            
-<span>
-<button onclick="myFunction()" class="dot"></button>
-    <script>
-      function myFunction() {
-    var element = document.body;
-    element.classList.toggle("dark");
-}
-    </script>
-</span>
 
-      </nav>
+
+            <span>
+               <button onclick="myFunction()" class="dot"></button>
+               <script>
+                  function myFunction() {
+                     var element = document.body;
+                     element.classList.toggle("dark");
+                  }
+               </script>
+            </span>
+
+         </nav>
       </header>
-         
+
 
       <main>
          {{{ body }}}
       </main>
-      
+
       <footer>
          Blood and Thunder!
+         {{#if loggedIn}}
+         <button id="logout" class="btn-no-style">logout</button>
+         {{/if}}
       </footer>
    </div>
    {{#if loggedIn}}
