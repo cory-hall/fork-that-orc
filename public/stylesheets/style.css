@@ -36,7 +36,7 @@ a:hover {
   padding: 1%;
   color: white;
   font-weight: bold;
-  transition: background-color .1s;
+  transition: background-color crimson .1s;
   cursor: pointer;
   border-radius: 5px;
 }
@@ -50,7 +50,13 @@ button:hover {
 }
 
 
-.form {}
+.form {
+  display: flex;
+  flex-direction: column;
+  border: 2px black solid;
+  width: 40%;
+  padding: 10px;
+}
 
 .card-header {
   color: darkred;
