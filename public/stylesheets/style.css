@@ -11,14 +11,6 @@ html {
   color: #333;
 }
 
-.wrapper {
-  width: 100%;
-  min-height: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-}
-
 a {
   text-decoration: none;
   color: darkred;
@@ -51,13 +43,6 @@ button:hover {
 }
 
 
-
-.post-list {
-  margin: 0;
-  padding: 0;
-}
-
-
 .wrapper {
   width: 100%;
   min-height: 100%;
@@ -80,7 +65,6 @@ header h1 {
 }
 
 main {
-  flex: 1;
   padding: 2% 4%;
 }
 
@@ -103,54 +87,6 @@ main {
   color: crimson;
 }
 
-.delete-post-btn {
-  background-color: #d41414;
-}
-
-.delete-post-btn:hover {
-  background-color: #ff643d;
-}
-
-.post {
-  margin-bottom: 2%;
-  line-height: 150%;
-}
-
-.post .title span {
-  font-style: italic;
-  font-size: 90%;
-  color: #7d7d7d;
-}
-
-.edit-link {
-  display: block;
-  margin: -1.5% 0 2% 0;
-}
-
-.upvote-btn {
-  background-color: #197d0f;
-  transition: background-color .1s;
-}
-
-.upvote-btn:hover {
-  background-color: #1f9c13;
-}
-
-.comment {
-  padding: 1%;
-  margin-bottom: 1%;
-}
-
-.comment:nth-child(odd) {
-  background-color: #fff5eb;
-}
-
-.comment .meta {
-  font-size: 90%;
-  margin-bottom: .5%;
-  opacity: .6;
-}
-
 footer {
   border-top: 1px solid #ccc;
   display: flex;
@@ -158,6 +94,11 @@ footer {
   padding: 1%;
   font-size: 110%;
 }
+
+#logout{
+  margin-left: 38%;
+}
+
 /* CHARACTER CREATION SCREEN BEGIN */
 .char-sheet {
   display: flex;
@@ -316,9 +257,6 @@ footer {
   margin: 5px;
 }
 
-
-
-
 /* CHARACTER CREATION SCREEN END */
 
 
@@ -359,11 +297,12 @@ body{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    width: auto;
     border: 2px black solid;
     border-radius: 15px;
     background-color: lightgrey;
-    height: 300px;
-    width: 30%;
+    /* height: 300px;
+    width: 40%; */
     margin: 10px;
   }  
 
@@ -392,4 +331,33 @@ body{
     margin: 10px;
     border-radius: 15px;
   }
+
   /* Login / Signup End */
+
+  /* Hero Card Begin */
+  .heros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    border: 2px black solid;
+    margin: 10px;
+    min-width: 30%;
+  }
+
+  .name {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .hero ul {
+    list-style: none;
+    list-style-position: inherit;
+  }
+  /* Hero Card End */
