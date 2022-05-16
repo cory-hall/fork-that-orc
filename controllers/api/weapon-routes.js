@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Weapons } = require('../../models/')
+const { Weapons } = require('../../models/');
 
 // GET all weapons
 router.get('/', (req, res) => {
@@ -35,7 +35,10 @@ router.post('/', (req, res) => {
       weapon_rating: req.body.weapon_rating,
       weapon_image: req.body.weapon_image
     })
-      .then(dbData => res.json(dbData))
+      .then(dbData => {
+        console.log(dbData.id);
+        res.json(dbData);
+      })
       .catch(err => {
         console.log(err);
         res.status(400).json(err);
@@ -50,17 +53,17 @@ router.delete('/:id', (req, res) => {
       id: req.params.id
     }
   })
-  .then(dbData => {
-    if (!dbData) {
-      res.status(404).json({ message: 'No weapon found with this id' });
-      return;
-    }
-    res.json(dbData)
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  })
+    .then(dbData => {
+      if (!dbData) {
+        res.status(404).json({ message: 'No weapon found with this id' });
+        return;
+      }
+      res.json(dbData)
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    })
 })
 
 module.exports = router;
