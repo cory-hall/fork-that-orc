@@ -49,6 +49,10 @@ button:hover {
   margin-right: 20px;
 }
 
+.signup-link{
+  margin-right: 20px;
+}
+
 
 .form {}
 
@@ -110,16 +114,17 @@ main {
   padding: 0;
   cursor: pointer;
   text-decoration: none;
-  color: #225ca3;
+  color: darkred;
   font-size: 100%;
   font-weight: bold;
   transition: color .1s;
   margin-left: 16px;
+  
 }
 
 .btn-no-style:hover {
   background: none;
-  color: #3486eb;
+  color: crimson;
 }
 
 .delete-post-btn {
@@ -351,3 +356,34 @@ footer {
 
 
 /* CHARACTER CREATION SCREEN END */
+
+
+/* Dark mode */
+body{
+  padding:0% 3% 10% 3%;
+  text-align:center;
+  }
+  h1{
+  color: #32a852;
+  margin-top:30px;
+  }
+
+  button{
+      cursor: pointer;
+      border: 1px solid #555;
+      text-align: center;
+      padding: 5px;
+      margin-left: 8px;
+  }
+  .dark{
+      background-color: #222;
+      color: #e6e6e6;
+  }
+
+  .dot {
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
