@@ -45,48 +45,18 @@ button:hover {
   background-color: crimson;
 }
 
-.login-link {
-  margin-right: 20px;
-}
-
-.signup-link{
-  margin-right: 20px;
-}
-
-
-.form {
-  display: flex;
-  flex-direction: column;
-  border: 2px black solid;
-  width: 40%;
-  padding: 10px;
-}
 
 .card-header {
   color: darkred;
 }
 
 
-.form-label {
-  margin-top: 10px;
-}
-
-.signup-btn {
-  margin-left: 10px;
-}
-
-.login-btn {
-  margin-left: 10px;
-}
 
 .post-list {
   margin: 0;
   padding: 0;
 }
 
-form label {
-  display: block;
-}
 
 .wrapper {
   width: 100%;
@@ -166,10 +136,6 @@ main {
   background-color: #1f9c13;
 }
 
-.comment-form {
-  margin-bottom: 5%;
-}
-
 .comment {
   padding: 1%;
   margin-bottom: 1%;
@@ -183,14 +149,6 @@ main {
   font-size: 90%;
   margin-bottom: .5%;
   opacity: .6;
-}
-
-.new-post-form input {
-  width: 300px;
-}
-
-.edit-post-form {
-  margin-bottom: 5%;
 }
 
 footer {
@@ -393,3 +351,45 @@ body{
     border-radius: 50%;
     display: inline-block;
   }
+  /* Dark mode end */
+
+  /* Login / Signup */
+
+  .login, .signup{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: 2px black solid;
+    border-radius: 15px;
+    background-color: lightgrey;
+    height: 300px;
+    width: 30%;
+    margin: 10px;
+  }  
+
+  .login h1, .signup h1 {
+    color: black;
+  }
+
+  .form {
+    display: flex;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 15px;
+    padding: 10px;
+  }
+
+  .form-input {
+    padding: 12px;
+    border-radius: 15px;
+    margin: 5px;
+  }
+
+  .form-btn{
+    margin: 10px;
+    border-radius: 15px;
+  }
+  /* Login / Signup End */
