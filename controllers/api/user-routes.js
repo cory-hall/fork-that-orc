@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Armor, Character, Consumables, Inventory, User, Weapons } = require('../../models');
+const { Armors, Character, Consumables, Inventory, User, Weapons } = require('../../models');
 
 // create user route
 router.post('/', (req, res) => {

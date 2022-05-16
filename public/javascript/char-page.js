@@ -1,4 +1,5 @@
 
+
 // global name arrays
 const firstName = [
   'The Butcher',
@@ -180,24 +181,25 @@ const rollStatHandler = (event) => {
   switch (charClass) {
     case 'warrior':
       var health = randomInt(100) + 50;
-      var mana = randomInt(100);
-      var str = randomInt(100) + 10;
-      var dex = randomInt(100) + 5;
-      var int = randomInt(100);
+
+      var mana = randomInt(100) ;
+      var str = randomInt(100)  + 10;
+      var dex = randomInt(100)  + 5;
+      var int = randomInt(100) ;
       break;
     case 'rogue':
       var health = randomInt(100) + 25;
-      var mana = randomInt(100) + 25;
-      var str = randomInt(100) + 5;
-      var dex = randomInt(100) + 5;
-      var int = randomInt(100) + 5;
+      var mana = randomInt(100)  + 25;
+      var str = randomInt(100)  + 5;
+      var dex = randomInt(100)  + 5;
+      var int = randomInt(100)  + 5;
       break;
     case 'mage':
-      var health = randomInt(100);
-      var mana = randomInt(100) + 50;
-      var str = randomInt(100);
-      var dex = randomInt(100) + 5;
-      var int = randomInt(100) + 10;
+      var health = randomInt(100) ;
+      var mana = randomInt(100)  + 50;
+      var str = randomInt(100) ;
+      var dex = randomInt(100)  + 5;
+      var int = randomInt(100)  + 10;
       break;
     default:
       break;
