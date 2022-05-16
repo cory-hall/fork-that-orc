@@ -1,0 +1,24 @@
+{{#unless loggedIn}}
+<div class="login">
+  <h1>Login</h1>
+    <form id="login-form" class="form">
+      <input type="text" class="form-input" id="username-login" placeholder="Username" required="required" />
+        <input type="password" class="form-input" id="password-login" placeholder="Password" required="required" />
+        <button type="submit" class="form-btn">Let me in.</button>
+    </form>
+</div>
+
+<div class="signup">
+  <h1>Signup</h1>
+    <form id="signup-form" class="form">
+      <input type="text" class="form-input" id="username-signup" placeholder="Username" required="required" />
+        <input type="password" class="form-input" id="password-signup" placeholder="Password" required="required" />
+        <button type="submit" class="form-btn">Sign me up.</button>
+    </form>
+</div>
+{{/unless}}
+
+{{#unless loggedIn}}
+<script src="/javascript/login.js"></script>
+<script src="/javascript/signup.js"></script>
+{{/unless}}
