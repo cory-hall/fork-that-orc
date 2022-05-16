@@ -181,6 +181,7 @@ const rollStatHandler = (event) => {
   switch (charClass) {
     case 'warrior':
       var health = randomInt(100) + 50;
+
       var mana = randomInt(100) ;
       var str = randomInt(100)  + 10;
       var dex = randomInt(100)  + 5;

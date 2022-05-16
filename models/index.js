@@ -25,9 +25,9 @@ User.hasMany(Character, {
     foreignKey: 'user_id'
 })
 
-// Character.belongsTo(User, {
-//     foreignKey: 'hero_id'
-// })
+Character.belongsTo(User, {
+    foreignKey: 'hero_id'
+})
 
 
 module.exports = { User, Weapons, Armors, Character };
