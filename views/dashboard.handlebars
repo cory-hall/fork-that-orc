@@ -1,5 +1,7 @@
-<section>
-  <a href="/dashboard/charcreate">Create</a>
-</section>
-    
+<section class="heros">
 
+
+  {{#each builds as |build|}}
+  {{> hero-info build}}
+  {{/each}}
+</section>
