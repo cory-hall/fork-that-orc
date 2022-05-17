@@ -227,16 +227,10 @@ const rollStatHandler = (event) => {
 };
 
 const buildChar = () => {
-  wepPostHandler;
-  armPostHandler;
-  charPostHandler;
+  wepPostHandler(event);
+  armPostHandler(event);
+  charPostHandler(event);
 }
-
-
-
-
-
-
 
 
 document.querySelector('.name-btn').addEventListener('click', randomNameHandler);

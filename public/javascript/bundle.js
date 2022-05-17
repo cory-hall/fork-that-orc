@@ -2738,9 +2738,9 @@ const rollStatHandler = (event) => {
 };
 
 const buildChar = () => {
-  wepPostHandler;
-  armPostHandler;
-  charPostHandler;
+  wepPostHandler(event);
+  armPostHandler(event);
+  charPostHandler(event);
 }
 
 
