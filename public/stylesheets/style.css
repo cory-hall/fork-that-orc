@@ -417,6 +417,10 @@ body{
     height: 50px;
   }
 
+  .hero-icon {
+    border-radius: 5px;
+  }
+
   .no-heroes {
     min-height: 500px;
     margin: auto;
