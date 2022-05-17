@@ -15,6 +15,22 @@ router.get('/all-heros', (req, res) => {
       {
         model: User,
         attributes: ['username']
+      },
+      {
+        model: Weapons,
+        attributes: [
+          'id',
+          'weapon_name',
+          'weapon_rating'
+        ]
+      },
+      {
+        model: Armors,
+        attributes: [
+          'id',
+          'armor_name',
+          'armor_rating'
+        ]
       }
     ]
   })

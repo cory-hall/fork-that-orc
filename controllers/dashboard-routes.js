@@ -8,7 +8,25 @@ router.get('/', withAuth, (req, res) => {
     where: {
        // get user_id from session user_id
     user_id: req.session.user_id
-    }
+    },
+    include: [
+      {
+        model: Weapons,
+        attributes: [
+          'id',
+          'weapon_name',
+          'weapon_rating'
+        ]
+      },
+      {
+        model: Armors,
+        attributes: [
+          'id',
+          'armor_name',
+          'armor_rating'
+        ]
+      }
+    ]
   })
     .then(dbData => {
       // serialize the data before passing to template

@@ -33,7 +33,7 @@ router.post('/', (req, res) => {
       weapon_name: req.body.weapon_name,
       weapon_class: req.body.weapon_class,
       weapon_rating: req.body.weapon_rating,
-      weapon_image: req.body.weapon_image
+      // weapon_image: req.body.weapon_image
     })
       .then(dbData => {
         res.json(dbData);
@@ -43,7 +43,6 @@ router.post('/', (req, res) => {
         res.status(400).json(err);
       })
   }
-  return weaponId;
 });
 
 // DELETE a weapon based on `id` value
