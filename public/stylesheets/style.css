@@ -353,6 +353,11 @@ body{
     min-width: 30%;
   }
 
+  .username {
+    color: black;
+    font-size: 1.5rem;
+  }
+
   .name {
     display: flex;
     flex-wrap: nowrap;
