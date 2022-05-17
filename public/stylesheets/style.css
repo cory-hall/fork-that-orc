@@ -18,6 +18,11 @@ a {
   font-size: 1.5rem;
 }
 
+h1 a {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
 a:hover {
   color: crimson;
 }
@@ -52,15 +57,22 @@ button:hover {
 
 header {
   border-bottom: 2px solid black;
-  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: stretch;
   padding: 0 1%;
   font-size: 1.5rem;
 }
-header h1 {
-  color: darkred;
-  font-style: bold;
+
+nav {
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 main {
@@ -357,10 +369,15 @@ button:active {
   min-width: 30%;
 }
 
-.name {
-  display: flex;
-  flex-wrap: nowrap;
-}
+  .username {
+    color: black;
+    font-size: 1.5rem;
+  }
+
+  .name {
+    display: flex;
+    flex-wrap: nowrap;
+  }
 
 .hero ul {
   list-style: none;
