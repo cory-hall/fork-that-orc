@@ -26,7 +26,7 @@ User.hasMany(Character, {
 })
 
 Character.belongsTo(User, {
-    foreignKey: 'hero_id'
+    foreignKey: 'user_id'
 })
 
 
