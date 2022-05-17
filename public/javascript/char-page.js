@@ -95,7 +95,7 @@ const randomArmHandler = (event) => {
   }
 }
 
-// this function generates the stat rolls
+// generates the  character stat rolls
 const rollStatHandler = (event) => {
   event.preventDefault();
 
