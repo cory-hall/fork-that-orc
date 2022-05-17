@@ -2,7 +2,7 @@ const router = require('express').Router();
 const db = require('../../config/connection');
 const { Armors, Character, Weapons } = require('../../models');
 const sequelize = require('../../config/connection');
-var weaponSql = ""
+var weaponId = require('./weapon-routes');
 var armorSql = ""
 
 router.get('/', (req, res) => {
@@ -36,7 +36,7 @@ router.post('/', (req, res) => {
         strength: req.body.strength,
         dexterity: req.body.dexterity,
         intelligence: req.body.intelligence,
-        weapon_id: sequelize.literal('(SELECT id FROM weapon ORDER BY ID DESC LIMIT 1)'),
+        weapon_id: weaponId,
         armor_id: sequelize.literal('(SELECT id FROM armor ORDER BY ID DESC LIMIT 1)'),
         user_id: req.session.user_id
     })

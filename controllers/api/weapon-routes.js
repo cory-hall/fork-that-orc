@@ -36,7 +36,6 @@ router.post('/', (req, res) => {
       weapon_image: req.body.weapon_image
     })
       .then(dbData => {
-        console.log(dbData.id);
         res.json(dbData);
       })
       .catch(err => {
@@ -44,6 +43,7 @@ router.post('/', (req, res) => {
         res.status(400).json(err);
       })
   }
+  return weaponId;
 });
 
 // DELETE a weapon based on `id` value
@@ -66,4 +66,4 @@ router.delete('/:id', (req, res) => {
     })
 })
 
-module.exports = router;
+module.exports =  router;
