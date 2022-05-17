@@ -26,12 +26,16 @@
                <li>
                   <a href="/dashboard/charcreate" class="heroCreate">Create</a>
                </li>
-               </li>
-               <button id="logout" class="btn-no-style">logout</button>
-               </li>
                {{/if}}
                <li>
                   <a href="/all-heros" class="allHero-link">See All Heroes</a>
+               </li>
+               {{#if loggedIn}}
+               </li>
+               <button id="logout" class="btn-no-style">Logout</button>
+               </li>
+               {{/if}}
+
             </ul>
 
 

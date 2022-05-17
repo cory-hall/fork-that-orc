@@ -2,14 +2,15 @@ const router = require('express').Router();
 const db = require('../../config/connection');
 const { Armors, Character, Weapons } = require('../../models');
 const sequelize = require('../../config/connection');
+var weaponId = require('./weapon-routes');
 
 router.get('/', (req, res) => {
     Character.findAll({})
-    .then(dbData => res.json(dbData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    })
+        .then(dbData => res.json(dbData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        })
 });
 
 router.get('/:id', (req, res) => {
@@ -18,19 +19,14 @@ router.get('/:id', (req, res) => {
             id: req.params.id
         }
     })
-    .then(dbData => res.json(dbData))
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    })
+        .then(dbData => res.json(dbData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        })
 });
 
-
 router.post('/', (req, res) => {
-
-    let weaponSql = sequelize.literal('(SELECT id FROM weapon ORDER BY ID DESC LIMIT 1)');
-    let armorSql = sequelize.literal('(SELECT id FROM armor ORDER BY ID DESC LIMIT 1)');
-
     Character.create({
         character_name: req.body.character_name,
         character_class: req.body.character_class,
@@ -39,12 +35,12 @@ router.post('/', (req, res) => {
         strength: req.body.strength,
         dexterity: req.body.dexterity,
         intelligence: req.body.intelligence,
-        weapon_id: weaponSql,
-        armor_id: armorSql,
+        weapon_id: sequelize.literal('(SELECT id FROM weapon ORDER BY ID DESC LIMIT 1)'),
+        armor_id: sequelize.literal('(SELECT id FROM armor ORDER BY ID DESC LIMIT 1)'),
         user_id: req.session.user_id
     })
 
-        .then(userData =>  res.json(userData))
+        .then(userData => res.json(userData))
         .catch(err => {
             console.log(err);
             res.status(400).json(err);

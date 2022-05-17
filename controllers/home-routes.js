@@ -20,7 +20,6 @@ router.get('/all-heros', (req, res) => {
   })
   .then(dbData => {
     const builds = dbData.map(build => build.get({ plain: true }));
-    console.log(builds);
     res.render('all-heros', { builds, loggedIn: req.session.loggedIn})
   })
   .catch(err => {
