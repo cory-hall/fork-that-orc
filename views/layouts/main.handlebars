@@ -11,23 +11,31 @@
 <body>
    <div class="wrapper">
       <header>
-         <h1>Fork That Orc</h1>
+         {{#if loggedIn}}
+         <h1>
+            <a href='/dashboard'>Fork That Orc</a>
+         </h1>
+         {{else}}
+         <h1>
+            <a href='/'>Fork That Orc</a>
+         </h1>
+         {{/if}}
          <nav>
             <ul>
-            {{#if loggedIn}}
-            <li>
-            <a href="/dashboard/charcreate" class="heroCreate">Create</a>
-            </li>
-            {{/if}}
-            <li>
-            <a href="/all-heros" class="allHero-link">See All Heroes</a>
-            </li>
-            <button id="logout" class="btn-no-style">logout</button>
-            </li>
+               {{#if loggedIn}}
+               <li>
+                  <a href="/dashboard/charcreate" class="heroCreate">Create</a>
+               </li>
+               </li>
+               <button id="logout" class="btn-no-style">logout</button>
+               </li>
+               {{/if}}
+               <li>
+                  <a href="/all-heros" class="allHero-link">See All Heroes</a>
             </ul>
-         
-            
-               <span>
+
+
+            <span>
                <button onclick="myFunction()" class="dot"></button>
                <script>
                   function myFunction() {
@@ -35,12 +43,12 @@
                      element.classList.toggle("dark");
                   }
                </script>
-               </span>
+            </span>
 
-            
-         
-            
-            
+
+
+
+
 
          </nav>
       </header>
