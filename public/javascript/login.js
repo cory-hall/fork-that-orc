@@ -7,8 +7,10 @@ async function loginFormHandler(event) {
   // get password
   const password = document.querySelector('#password-login').value.trim();
 
+  // if both username and password are truthy
+  // call the API POST method at /api/users/login
   if (username && password) {
-    const response =  await fetch('/api/users/login', {
+    const response = await fetch('/api/users/login', {
       method: 'POST',
       body: JSON.stringify({
         username,

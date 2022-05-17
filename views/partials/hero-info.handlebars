@@ -1,13 +1,23 @@
+{{!-- <article class="hero">
+    <h2 class="name">{{character_name}}</h2>
+    <ul class="stats-list">
+        <li>Class: {{character_class}}</li>
+        <li>HP: {{health}}</li>
+        <li>MP: {{mana}}</li>
+        <li>STR: {{strength}}</li>
+        <li>DEX: {{dexterity}}</li>
+        <li>INT: {{intelligence}}</li>
+    </ul>
+</article> --}}
+
 <article class="hero">
-    <div class="name">
-        <h2>{{character_name}}</h2>
-        <ul class="stats-list">
-            <li>Class: {{character_class}}</li>
-            <li>HP: {{health}}</li>
-            <li>MP: {{mana}}</li>
-            <li>STR: {{strength}}</li>
-            <li>DEX: {{dexterity}}</li>
-            <li>INT: {{intelligence}}</li>
-        </ul>
-    </div>
+    <h2 class="name">{{character_name}}</h2>
+    {{!-- <ul class="stats-list"> --}}
+        <p>Class: {{character_class}}</p>
+        <p>Health: {{health}}</p>
+        <p>Mana: {{mana}}</p>
+        <p>Strength: {{strength}}</p>
+        <p>Dexterity: {{dexterity}}</p>
+        <p>Intelligence: {{intelligence}}</p>
+    {{!-- </ul> --}}
 </article>

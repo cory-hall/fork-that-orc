@@ -2,28 +2,31 @@ const router = require('express').Router();
 const { User, Weapons, Armors, Character } = require ('../models');
 
 router.get('/', (req, res) => {
+  res.render('homepage');
+})
+
+router.get('/login', (req, res) => {
+  res.render('login')
+})
+
+router.get('/all-heros', (req, res) => {
   Character.findAll({
+    include: [
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
   })
   .then(dbData => {
     const builds = dbData.map(build => build.get({ plain: true }));
-    res.render('homepage', { builds, loggedIn: req.session.loggedIn})
+    console.log(builds);
+    res.render('all-heros', { builds, loggedIn: req.session.loggedIn})
   })
   .catch(err => {
     console.log(err);
     res.status(500).json(err);
   });
 });
-
-router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
-  res.render('login');
-});
-
-router.get('/signup', (req, res) => {
-  res.render('signup');
-})
 
 module.exports = router;
