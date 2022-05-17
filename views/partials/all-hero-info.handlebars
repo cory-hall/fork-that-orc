@@ -1,18 +1,6 @@
-{{!-- <article class="hero">
-    <h2 class="name">{{character_name}}</h2>
-    <ul class="stats-list">
-        <li>Class: {{character_class}}</li>
-        <li>HP: {{health}}</li>
-        <li>MP: {{mana}}</li>
-        <li>STR: {{strength}}</li>
-        <li>DEX: {{dexterity}}</li>
-        <li>INT: {{intelligence}}</li>
-    </ul>
-</article> --}}
-
 <article class="hero">
+  <h1 class="username">Made By User: {{user.username}}</h1>
     <h2 class="name">{{character_name}}</h2>
-    {{!-- <ul class="stats-list"> --}}
         <p>Class: {{character_class}}</p>
         <p>Health: {{health}}</p>
         <p>Mana: {{mana}}</p>
@@ -21,5 +9,4 @@
         <p>Intelligence: {{intelligence}}</p>
         <p>Weapon: {{weapon.weapon_name}} ({{weapon.weapon_rating}})</p>
         <p>Armor: {{armor.armor_name}} ({{armor.armor_rating}})</p>
-    {{!-- </ul> --}}
 </article>

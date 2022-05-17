@@ -33,10 +33,9 @@ router.post('/', (req, res) => {
       weapon_name: req.body.weapon_name,
       weapon_class: req.body.weapon_class,
       weapon_rating: req.body.weapon_rating,
-      weapon_image: req.body.weapon_image
+      // weapon_image: req.body.weapon_image
     })
       .then(dbData => {
-        console.log(dbData.id);
         res.json(dbData);
       })
       .catch(err => {
@@ -66,4 +65,4 @@ router.delete('/:id', (req, res) => {
     })
 })
 
-module.exports = router;
+module.exports =  router;

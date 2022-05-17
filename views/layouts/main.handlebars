@@ -12,14 +12,33 @@
 <body>
    <div class="wrapper">
       <header>
-         <h1>Welcome</h1>
-         <nav class="navbar">
-            <a href="/all-heros" class="allHero-link">See All Heroes</a>
-            {{#if loggedIn}}
-            <a href="/dashboard" class="my-heroes-link">My Heroes</a>
-            <a href="/dashboard/charcreate">Create</a>
-            <button id="logout" class="btn-no-style">logout</button>
-            {{/if}}
+
+         {{#if loggedIn}}
+         <h1>
+            <a href='/dashboard'>Fork That Orc</a>
+         </h1>
+         {{else}}
+         <h1>
+            <a href='/'>Fork That Orc</a>
+         </h1>
+         {{/if}}
+         <nav>
+            <ul>
+               {{#if loggedIn}}
+               <li>
+                  <a href="/dashboard/charcreate" class="heroCreate">Create</a>
+               </li>
+               {{/if}}
+               <li>
+                  <a href="/all-heros" class="allHero-link">See All Heroes</a>
+               </li>
+               {{#if loggedIn}}
+               </li>
+               <button id="logout" class="btn-no-style">Logout</button>
+               </li>
+               {{/if}}
+
+            </ul>
 
             <span>
                <button onclick="myFunction()" class="dot"></button>
@@ -30,7 +49,6 @@
                   }
                </script>
             </span>
-
          </nav>
       </header>
 

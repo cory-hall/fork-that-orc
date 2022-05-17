@@ -16,6 +16,12 @@ a {
   color: darkred;
   font-weight: bold;
   font-size: 1.5rem;
+  
+}
+
+h1 a {
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 a:hover {
@@ -97,9 +103,11 @@ button:hover {
 header {
   border-bottom: 2px solid black;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
   padding: 0 1%;
+  font-size: 1.5rem;
 }
 
 .navbar a {
@@ -108,6 +116,7 @@ header {
 
 header h1 {
   font-size: 1em;
+
 }
 
 main {
@@ -117,14 +126,14 @@ main {
 .btn-no-style {
   background: none;
   border: none;
-  padding: 0;
   cursor: pointer;
   color: darkred;
-  font-size: 100%;
+  font-size: 1.5rem;
+  padding: 0 1%;
   font-weight: bold;
   transition: color .1s;
-  margin-left: 16px;
-  
+  display: inline-block;
+  justify-content: space-around;
 }
 
 .btn-no-style:hover {
@@ -141,7 +150,8 @@ footer {
 }
 
 #logout{
-  margin-left: 38%;
+  display: inline-block;
+  
 }
 
 /* CHARACTER CREATION SCREEN BEGIN */
@@ -322,8 +332,7 @@ body{
       cursor: pointer;
       border: 1px solid #555;
       text-align: center;
-      padding: 5px;
-      margin-left: 8px;
+  
   }
   .dark{
       background-color: #222;
@@ -416,6 +425,11 @@ body{
     padding: 70px;
   }
 
+  .username {
+    color: black;
+    font-size: 1.5rem;
+  }
+
   .name {
     display: flex;
     flex-wrap: nowrap;
@@ -426,3 +440,13 @@ body{
     list-style-position: inherit;
   }
   /* Hero Card End */
+
+  ul {
+    list-style-type: none;
+  
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  }
