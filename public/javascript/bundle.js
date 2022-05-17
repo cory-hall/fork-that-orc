@@ -2513,38 +2513,6 @@ const wepPostHandler = async (event) => {
 
 module.exports = { wepPostHandler };
 },{}],36:[function(require,module,exports){
-var Roll = require('roll'),
-  roll = new Roll();
-
-var { wepPostHandler } = require('./add-weapon.js');
-var { armPostHandler } = require('./add-armor.js');
-var { charPostHandler } = require('./add-char.js');
-var { firstName, lastName } = require('./name-arrays');
-
-// global name arrays
-// const firstName = [
-//   'The Butcher',
-//   'Garrosh',
-//   'Austin'
-// ];
-
-// const lastName = [
-//   "of Blaviken",
-//   'Hellscream',
-//   'Carter'
-// ];
-
-const warriorWeapon = [
-  {
-    name: "Steel Axe",
-    rating: "5"
-  },
-  {
-    name: "Dragontooth Hammer",
-    rating: "10"
-  }
-];
-
 const warriorArmor = [
   {
     name: "Iron Armor",
@@ -2552,17 +2520,6 @@ const warriorArmor = [
   },
   {
     name: "Dragonscale Armor",
-    rating: 10
-  }
-];
-
-const rogueWeapon = [
-  {
-    name: "Iron Dagger",
-    rating: 4
-  },
-  {
-    name: "Corehound Tooth",
     rating: 10
   }
 ];
@@ -2578,17 +2535,6 @@ const rogueArmor = [
   }
 ];
 
-const mageWeapon = [
-  {
-    name: "First Staff",
-    rating: 6
-  },
-  {
-    name: "Wabbajack",
-    rating: 10
-  }
-];
-
 const mageArmor = [
   {
     name: "Wizard Robes",
@@ -2598,9 +2544,22 @@ const mageArmor = [
     name: "Enchanted Robes",
     rating: 10
   }
-]
+];
 
-let statObj = {};
+module.exports = { warriorArmor, rogueArmor, mageArmor };
+},{}],37:[function(require,module,exports){
+// required library
+var Roll = require('roll'),
+  roll = new Roll();
+
+// required imported functions
+var { wepPostHandler } = require('./add-weapon.js');
+var { armPostHandler } = require('./add-armor.js');
+var { charPostHandler } = require('./add-char.js');
+// required imported data
+var { firstName, lastName } = require('./name-arrays');
+var { warriorWeapon, rogueWeapon, mageWeapon } = require('./weapon-arrays');
+var { warriorArmor, rogueArmor, mageArmor } = require('./armor-arrays');
 
 // function to return a random name from both name arrays
 // by using the randomInt function
@@ -2690,8 +2649,6 @@ const randomArmHandler = (event) => {
 const rollStatHandler = (event) => {
   event.preventDefault();
 
-  // clearFields();
-
   const healthField = document.querySelector('input[name="health"]');
   const manaField = document.querySelector('input[name="mana"]');
   const strField = document.querySelector('input[name="str"]');
@@ -2725,15 +2682,6 @@ const rollStatHandler = (event) => {
       break;
   };
 
-  statObj = {
-    charClass: charClass,
-    health: health,
-    mana: mana,
-    str: str,
-    dex: dex,
-    int: int
-  };
-
   healthField.value = health;
   manaField.value = mana;
   strField.value = str;
@@ -2741,6 +2689,7 @@ const rollStatHandler = (event) => {
   intField.value = int;
 };
 
+// function to add the weapon, armor, and character to the database
 const buildChar = () => {
   wepPostHandler(event);
   armPostHandler(event);
@@ -2755,7 +2704,7 @@ document.querySelector('.arm-btn').addEventListener('click', randomArmHandler);
 document.querySelector('.save-char').addEventListener('click', buildChar);
 
 
-},{"./add-armor.js":33,"./add-char.js":34,"./add-weapon.js":35,"./name-arrays":37,"roll":18}],37:[function(require,module,exports){
+},{"./add-armor.js":33,"./add-char.js":34,"./add-weapon.js":35,"./armor-arrays":36,"./name-arrays":38,"./weapon-arrays":39,"roll":18}],38:[function(require,module,exports){
 const firstName = [
   'The Butcher',
   'Garrosh',
@@ -2769,4 +2718,39 @@ const lastName = [
 ];
 
 module.exports = { firstName, lastName };
-},{}]},{},[36]);
+},{}],39:[function(require,module,exports){
+const warriorWeapon = [
+  {
+    name: "Steel Axe",
+    rating: "5"
+  },
+  {
+    name: "Dragontooth Hammer",
+    rating: "10"
+  }
+];
+
+const rogueWeapon = [
+  {
+    name: "Iron Dagger",
+    rating: 4
+  },
+  {
+    name: "Corehound Tooth",
+    rating: 10
+  }
+];
+
+const mageWeapon = [
+  {
+    name: "First Staff",
+    rating: 6
+  },
+  {
+    name: "Wabbajack",
+    rating: 10
+  }
+];
+
+module.exports = { warriorWeapon, rogueWeapon, mageWeapon };
+},{}]},{},[37]);
