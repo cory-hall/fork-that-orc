@@ -4,20 +4,20 @@ var Roll = require('roll'),
 var { wepPostHandler } = require('./add-weapon.js');
 var { armPostHandler } = require('./add-armor.js');
 var { charPostHandler } = require('./add-char.js');
-
+var { firstName, lastName } = require('./name-arrays');
 
 // global name arrays
-const firstName = [
-  'The Butcher',
-  'Garrosh',
-  'Austin'
-];
+// const firstName = [
+//   'The Butcher',
+//   'Garrosh',
+//   'Austin'
+// ];
 
-const lastName = [
-  "of Blaviken",
-  'Hellscream',
-  'Carter'
-];
+// const lastName = [
+//   "of Blaviken",
+//   'Hellscream',
+//   'Carter'
+// ];
 
 const warriorWeapon = [
   {
