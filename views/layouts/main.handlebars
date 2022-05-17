@@ -11,15 +11,23 @@
 <body>
    <div class="wrapper">
       <header>
-         <h1>Welcome</h1>
+         <h1>Fork That Orc</h1>
          <nav>
-            <a href="/all-heros" class="allHero-link">See All Heroes</a>
+            <ul>
             {{#if loggedIn}}
-            <a href="/dashboard/charcreate">Create</a>
-            <button id="logout" class="btn-no-style">logout</button>
+            <li>
+            <a href="/dashboard/charcreate" class="heroCreate">Create</a>
+            </li>
             {{/if}}
-
-            <span>
+            <li>
+            <a href="/all-heros" class="allHero-link">See All Heroes</a>
+            </li>
+            <button id="logout" class="btn-no-style">logout</button>
+            </li>
+            </ul>
+         
+            
+               <span>
                <button onclick="myFunction()" class="dot"></button>
                <script>
                   function myFunction() {
@@ -27,7 +35,12 @@
                      element.classList.toggle("dark");
                   }
                </script>
-            </span>
+               </span>
+
+            
+         
+            
+            
 
          </nav>
       </header>
