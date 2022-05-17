@@ -4,10 +4,10 @@
 
 body,
 html {
+  font-family: 'Nothing You Could Do', cursive;
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: sans-serif;
   color: #333;
 }
 
@@ -36,10 +36,52 @@ a:hover {
   transition: background-color crimson 0.1s;
   cursor: pointer;
   border-radius: 5px;
+  background-repeat: no-repeat;
+  background-position: -120px -120px, 0 0;
+  background-image: -webkit-linear-gradient(
+    top left,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.2) 37%,
+    rgba(255, 255, 255, 0.8) 45%,
+    rgba(255, 255, 255, 0.0) 50%
+  );
+  background-image: -moz-linear-gradient(
+    0 0,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.2) 37%,
+    rgba(255, 255, 255, 0.8) 45%,
+    rgba(255, 255, 255, 0.0) 50%
+  );    
+  background-image: -o-linear-gradient(
+    0 0,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.2) 37%,
+    rgba(255, 255, 255, 0.8) 45%,
+    rgba(255, 255, 255, 0.0) 50%
+  );
+  background-image: linear-gradient(
+    0 0,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.2) 37%,
+    rgba(255, 255, 255, 0.8) 45%,
+    rgba(255, 255, 255, 0.0) 50%
+  );
+  -moz-background-size: 250% 250%, 100% 100%;
+       background-size: 250% 250%, 100% 100%;
+  
+  -webkit-transition: background-position 0s ease;
+     -moz-transition: background-position 0s ease;       
+       -o-transition: background-position 0s ease;
+          transition: background-position 0s ease;
 }
 
 button:hover {
   background-color: crimson;
+  background-position: 0 0, 0 0;
+  
+  -webkit-transition-duration: 0.5s;
+     -moz-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 }
 
 .card-header {
@@ -65,14 +107,13 @@ header {
   font-size: 1.5rem;
 }
 
-nav {
-  width: 100%;
+.navbar a {
+  border-right: 1px solid darkred;
 }
 
-nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+header h1 {
+  font-size: 1em;
+
 }
 
 main {
@@ -83,7 +124,6 @@ main {
   background: none;
   border: none;
   cursor: pointer;
-  text-decoration: none;
   color: darkred;
   font-size: 1.5rem;
   padding: 0 1%;
@@ -112,9 +152,12 @@ footer {
 
 /* CHARACTER CREATION SCREEN BEGIN */
 .char-sheet {
+  background-image: url(https://wallpaperaccess.com/full/3872532.jpg);
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 100px;
 }
 
 .char-header {
@@ -271,6 +314,7 @@ footer {
 
 /* Login / Signup */
 
+
 .login,
 .signup {
   display: flex;
@@ -281,6 +325,20 @@ footer {
   border-radius: 15px;
   background-color: lightgrey;
   /* height: 300px;
+
+
+  /* Login / Signup */
+
+  .login, .signup{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: auto;
+    border: 2px black solid;
+    border-radius: 15px;
+    background-color: lightgrey;
+    /* height: 300px;
+
     width: 40%; */
   margin: 10px;
 }
@@ -314,6 +372,7 @@ footer {
 
 /* Login / Signup End */
 
+
 /* Hero Card Begin */
 .heros {
   display: flex;
@@ -330,6 +389,41 @@ footer {
   margin: 10px;
   min-width: 30%;
 }
+=======
+  /* Hero Card Begin */
+  .heros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-image: url(https://wallpaperaccess.com/full/3872532.jpg);
+  }
+
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    border: solid 5px #333333;
+    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+    font-size: large;
+    margin: 10px;
+    min-width: 30%;
+    color: #222;
+  }
+
+  .hero img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .no-heroes {
+    min-height: 500px;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    padding: 70px;
+  }
+
 
   .username {
     color: black;
