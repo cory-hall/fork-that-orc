@@ -4,10 +4,10 @@
 
 body,
 html {
+  font-family: 'Nothing You Could Do', cursive;
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: sans-serif;
   color: #333;
 }
 
@@ -60,6 +60,10 @@ header {
   padding: 0 1%;
 }
 
+.navbar a {
+  border-right: 1px solid darkred;
+}
+
 header h1 {
   font-size: 1em;
 }
@@ -73,7 +77,6 @@ main {
   border: none;
   padding: 0;
   cursor: pointer;
-  text-decoration: none;
   color: darkred;
   font-size: 100%;
   font-weight: bold;
@@ -101,6 +104,8 @@ footer {
 
 /* CHARACTER CREATION SCREEN BEGIN */
 .char-sheet {
+  background-image: url(https://wallpaperaccess.com/full/3872532.jpg);
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -266,7 +271,7 @@ body{
   text-align:center;
   }
   h1{
-  color: #32a852;
+  color: darkred;
   margin-top:30px;
   }
 
@@ -339,6 +344,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    background-image: url(https://wallpaperaccess.com/full/3872532.jpg);
   }
 
   .hero {
@@ -346,9 +352,12 @@ body{
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-    border: 2px black solid;
+    border: solid 5px #333333;
+    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+    font-size: large;
     margin: 10px;
     min-width: 30%;
+    color: #222;
   }
 
   .name {
