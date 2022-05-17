@@ -18,11 +18,10 @@ const armPostHandler = async (event) => {
   });
 
   if (response.ok) {
-    charPostHandler(event);
   } else {
     alert(response.statusText);
   }
 
 }
 
-// document.querySelector('.save-char').addEventListener('click', armPostHandler);
+module.exports = { armPostHandler };

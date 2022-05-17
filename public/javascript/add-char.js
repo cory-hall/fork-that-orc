@@ -27,7 +27,10 @@ const charPostHandler = async (event) => {
 
   if (response.ok) {
     console.log('ADDED!');
+    document.location.replace('/dashboard');
   } else {
     alert(response.statusText);
   }
 }
+
+module.exports = { charPostHandler };

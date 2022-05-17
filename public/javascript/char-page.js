@@ -1,3 +1,9 @@
+var Roll = require('roll'),
+  roll = new Roll();
+
+var { wepPostHandler } = require('./add-weapon.js');
+var { armPostHandler } = require('./add-armor.js');
+var { charPostHandler } = require('./add-char.js');
 
 
 // global name arrays
@@ -180,26 +186,25 @@ const rollStatHandler = (event) => {
 
   switch (charClass) {
     case 'warrior':
-      var health = randomInt(100) + 50;
-
-      var mana = randomInt(100) ;
-      var str = randomInt(100)  + 10;
-      var dex = randomInt(100)  + 5;
-      var int = randomInt(100) ;
+      var health = roll.roll('d%').result + 50;
+      var mana = roll.roll('d%').result;
+      var str = roll.roll('2d6').result + 10;
+      var dex = roll.roll('d6').result + 5;
+      var int = roll.roll('d6').result;
       break;
     case 'rogue':
-      var health = randomInt(100) + 25;
-      var mana = randomInt(100)  + 25;
-      var str = randomInt(100)  + 5;
-      var dex = randomInt(100)  + 5;
-      var int = randomInt(100)  + 5;
+      var health = roll.roll('d%').result + 25;
+      var mana = roll.roll('d%').result + 25;
+      var str = roll.roll('2d6').result + 5;
+      var dex = roll.roll('2d6').result + 5;
+      var int = roll.roll('2d6').result + 5;
       break;
     case 'mage':
-      var health = randomInt(100) ;
-      var mana = randomInt(100)  + 50;
-      var str = randomInt(100) ;
-      var dex = randomInt(100)  + 5;
-      var int = randomInt(100)  + 10;
+      var health = roll.roll('d%').result;
+      var mana = roll.roll('d%').result + 50;
+      var str = roll.roll('2d6').result;
+      var dex = roll.roll('2d6').result + 5;
+      var int = roll.roll('2d6').result + 10;
       break;
     default:
       break;
@@ -221,6 +226,12 @@ const rollStatHandler = (event) => {
   intField.value = int;
 };
 
+const buildChar = () => {
+  wepPostHandler;
+  armPostHandler;
+  charPostHandler;
+}
+
 
 
 
@@ -232,4 +243,5 @@ document.querySelector('.name-btn').addEventListener('click', randomNameHandler)
 document.querySelector('.roll-char').addEventListener('click', rollStatHandler);
 document.querySelector('.wep-btn').addEventListener('click', randomWepHandler);
 document.querySelector('.arm-btn').addEventListener('click', randomArmHandler);
+document.querySelector('.save-char').addEventListener('click', buildChar);
 

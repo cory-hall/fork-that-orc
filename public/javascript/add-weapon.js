@@ -18,10 +18,11 @@ const wepPostHandler = async (event) => {
   });
 
   if (response.ok) {
-    armPostHandler(event);
   } else {
     alert(response.statusText);
   }
 };
 
-document.querySelector('.save-char').addEventListener('click', wepPostHandler);
+// document.querySelector('.save-char').addEventListener('click', wepPostHandler);
+
+module.exports = { wepPostHandler };
