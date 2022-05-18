@@ -331,19 +331,10 @@ footer {
 
   /* Login / Signup */
 
-  .login, .signup{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: auto;
-    border: 2px black solid;
-    border-radius: 15px;
-    background-color: lightgrey;
     /* height: 300px;
 
     width: 40%; */
-  margin: 10px;
-}
+
 
 .login h1,
 .signup h1 {
@@ -391,7 +382,6 @@ footer {
   margin: 10px;
   min-width: 30%;
 }
-
   /* Hero Card Begin */
   .heros {
     display: flex;
