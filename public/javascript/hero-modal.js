@@ -1,12 +1,13 @@
 const triggers = document.getElementsByClassName('trigger');
 const modals = document.getElementsByClassName('modal');
-const closeBtn = document.getElementsByClassName('close-button')
+const closeBtn = document.getElementsByClassName('close-button');
+const deleteBtn = document.getElementsByClassName('delete-btn');
 
 function setAtt() {
   for (var i = 0; i < triggers.length; i++) {
     triggers[i].addEventListener("click", () => getAtt);
     triggers[i].setAttribute('button-no', i);
-    modals[i].setAttribute('modal-no', i)
+    modals[i].setAttribute('modal-no', i);
   }
 }
 

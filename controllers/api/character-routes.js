@@ -2,7 +2,6 @@ const router = require('express').Router();
 const db = require('../../config/connection');
 const { Armors, Character, Weapons, Vote } = require('../../models');
 const sequelize = require('../../config/connection');
-var weaponId = require('./weapon-routes');
 
 router.get('/', (req, res) => {
     Character.findAll({
@@ -74,20 +73,21 @@ router.post('/', (req, res) => {
         });
 });
 
-// delete character
 router.delete('/:id', (req, res) => {
     Character.destroy({
         where: {
             id: req.params.id
         }
+    }).then(dbData => {
+        if (!dbData) {
+            res.status(404).json({ message: 'No character found with this id' });
+            return;
+        }
+        res.json(dbData)
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json(err);
     })
-        .then(userData => {
-            res.json(userData)
-                .catch(err => {
-                    console.log(err);
-                    res.status(500).json(err);
-                });
-        })
 })
 
 module.exports = router;
