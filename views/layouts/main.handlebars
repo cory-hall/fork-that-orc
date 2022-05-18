@@ -9,6 +9,7 @@
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="/stylesheets/style.css">
+   
 </head>
 
 <body>
@@ -18,13 +19,14 @@
          {{#if loggedIn}}
          <h1>
             <a href='/dashboard' class="title">Fork That Orc</a>
+
          </h1>
          {{else}}
          <h1>
             <a href='/'>Fork That Orc</a>
          </h1>
          {{/if}}
-         <nav>
+         <nav class="darkmode-ignore">
             <ul>
                {{#if loggedIn}}
                <li>
@@ -39,23 +41,12 @@
                <button id="logout" class="btn-no-style">Logout</button>
                </li>
                {{/if}}
-
             </ul>
-
-            <span>
-               <button onclick="myFunction()" class="dot"></button>
-               <script>
-                  function myFunction() {
-                     var element = document.body;
-                     element.classList.toggle("dark");
-                  }
-               </script>
-            </span>
          </nav>
       </header>
 
 
-      <main>
+      <main class="darkmode-ignore">
          {{{ body }}}
       </main>
 
@@ -66,6 +57,23 @@
    {{#if loggedIn}}
    <script src="/javascript/logout.js"></script>
    {{/if}}
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script>
+const options = {
+  bottom: '64px', // default: '32px'
+  right: '32px', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  backgroundColor: '#aaa',  // default: '#fff'
+  saveInCookies: false, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+</script>
+   
 </body>
 
 </html>
