@@ -393,7 +393,6 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    background-image: url(https://i.imgur.com/bbt8n1l.jpg);
   }
 
   .hero {
@@ -401,17 +400,20 @@ footer {
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-    border: solid 5px #333333;
+    border: solid 5px black;
     border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
     font-size: large;
     margin: 10px;
     min-width: 30%;
     color: #222;
+    background: rgb(229,228,241);
+    background: linear-gradient(90deg, rgba(229,228,241,1) 0%, rgba(191,191,221,1) 24%, rgba(169,159,227,1) 38%, rgba(147,196,229,1) 56%, rgba(103,148,237,1) 88%, rgba(0,212,255,1) 100%);
   }
 
   .hero img {
-    width: 50px;
-    height: 50px;
+    width: 85px;
+    height: 85px;
+    border: 8px solid black;
   }
 
   .hero-icon {
@@ -433,19 +435,43 @@ footer {
   }
 
   .name {
+    color: white;
     display: flex;
     flex-wrap: nowrap;
+    background-color: darkred;
+    width: 100%;
+    justify-content: center;
   }
 
 .hero ul {
   list-style: none;
   list-style-position: inherit;
 }
+
+.button-container {
+    display:flex;
+    text-align: center;
+    width: 150px;margin:0;
+}
+.delete-btn {
+  background-color: red;
+}
+
+.trigger {
+  background-color: aquamarine;
+}
+
+.card-button {
+  font-family: 'Eagle Lake', cursive;
+  border-radius: 100%;
+}
+
 /* Hero Card End */
 
 
   /* Modal Begin */
   .modal {
+    z-index: 99999;
     position: fixed;
     left: 0;
     top: 0;
@@ -467,6 +493,7 @@ footer {
     padding: 1rem 1.5rem;
     width: 24rem;
     border-radius: 0.5rem;
+    text-align: center;
 }
 
 .close-button {
