@@ -13,5 +13,9 @@ module.exports = {
     } else {
       return 'https://i.imgur.com/z97DOuz.png'
     }
+  },
+  capitalizeClass: (character_class) => {
+    return character_class.charAt(0).toUpperCase() + character_class.slice(1);
   }
 };
+

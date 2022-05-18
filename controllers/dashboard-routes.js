@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Weapons, Armors, Character } = require('../models');
 const withAuth = require('../utils/auth');
+const sequelize = require('../config/connection')
 
 // GET all builds for dashboard view, with withAuth helper
 router.get('/', withAuth, (req, res) => {
@@ -9,6 +10,19 @@ router.get('/', withAuth, (req, res) => {
        // get user_id from session user_id
     user_id: req.session.user_id
     },
+    attributes: [
+      'id',
+      'character_name',
+      'character_class',
+      'health',
+      'mana',
+      'strength',
+      'dexterity',
+      'intelligence',
+      'weapon_id',
+      'armor_id',
+      [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE hero.id = vote.hero_id)'), 'vote_count']
+    ],
     include: [
       {
         model: Weapons,
