@@ -1,7 +1,17 @@
 <section class="heros">
+  {{#if builds}}
   {{#each builds as |build|}}
   {{> hero-info build}}
   {{/each}}
+
+  {{else}}
+  <div class="no-heroes">
+    <h1>You haven't created any heroes yet!</h2>
+    <h3>Use the 'create character' button to start building your adventurer.</h3>
+  </div>
+  {{/if}}
+
 </section>
 
 <script src="/javascript/hero-modal.js"></script>
+

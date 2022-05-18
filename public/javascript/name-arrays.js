@@ -2,13 +2,23 @@
 const firstName = [
   'The Butcher',
   'Garrosh',
-  'Austin'
+  'Austin',
+  'Toby',
+  'Ariadne',
+  'Helen',
+  'Timmy',
+  'Agamemnon',
+  'Chuck'
 ];
 
 const lastName = [
   "of Blaviken",
   'Hellscream',
-  'Carter'
+  'Carter',
+  'Griffith',
+  'Kane',
+  'Maguire',
+  'Norris'
 ];
 
 module.exports = { firstName, lastName };
