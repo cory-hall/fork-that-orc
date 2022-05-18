@@ -33,6 +33,10 @@ a:hover {
   color: crimson;
 }
 
+nav {
+  text-align: center;
+}
+
 .btn {
   background-color: darkred;
   border: 0;
@@ -115,7 +119,6 @@ header {
 
 header h1 {
   font-size: 1em;
-
 }
 
 main {
