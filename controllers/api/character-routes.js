@@ -1,11 +1,25 @@
 const router = require('express').Router();
 const db = require('../../config/connection');
-const { Armors, Character, Weapons } = require('../../models');
+const { Armors, Character, Weapons, Vote } = require('../../models');
 const sequelize = require('../../config/connection');
 var weaponId = require('./weapon-routes');
 
 router.get('/', (req, res) => {
-    Character.findAll({})
+    Character.findAll({
+        attributes: [
+            'id',
+            'character_name',
+            'character_class',
+            'health',
+            'mana',
+            'strength',
+            'dexterity',
+            'intelligence',
+            'weapon_id',
+            'armor_id',
+            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE hero.id = vote.hero_id)'), 'vote_count']
+        ]
+    })
         .then(dbData => res.json(dbData))
         .catch(err => {
             console.log(err);
@@ -17,7 +31,20 @@ router.get('/:id', (req, res) => {
     Character.findAll({
         where: {
             id: req.params.id
-        }
+        },
+        attributes: [
+            'id',
+            'character_name',
+            'character_class',
+            'health',
+            'mana',
+            'strength',
+            'dexterity',
+            'intelligence',
+            'weapon_id',
+            'armor_id',
+            [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE hero.id = hero.post_id)'), 'vote_count']
+        ]
     })
         .then(dbData => res.json(dbData))
         .catch(err => {
