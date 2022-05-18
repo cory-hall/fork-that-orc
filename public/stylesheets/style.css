@@ -30,6 +30,10 @@ a:hover {
   color: crimson;
 }
 
+nav {
+  text-align: center;
+}
+
 .btn {
   background-color: darkred;
   border: 0;
