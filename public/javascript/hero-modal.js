@@ -8,7 +8,6 @@ function setAtt() {
     triggers[i].addEventListener("click", () => getAtt);
     triggers[i].setAttribute('button-no', i);
     modals[i].setAttribute('modal-no', i);
-    // deleteBtn[i].setAttribute('delete-no', i);
   }
 }
 
