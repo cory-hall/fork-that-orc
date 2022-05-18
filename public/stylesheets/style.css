@@ -5,13 +5,16 @@
 body,
 html {
   font-family: 'Eagle Lake', cursive;
-  height: 100%;
+  /* height: 100%; */
   padding: 0;
   margin: 0;
   color: #333;
   background-image: url(https://cdn.wallpapersafari.com/97/56/UGB4Lz.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh;
+  
 }
 
 a {
