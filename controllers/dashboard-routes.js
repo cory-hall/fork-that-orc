@@ -53,7 +53,7 @@ router.get('/', withAuth, (req, res) => {
     });
 });
 
-router.get('/charcreate', (req, res) => {
+router.get('/charcreate', withAuth, (req, res) => {
   res.render('charcreate', {loggedIn: true});
 })
 

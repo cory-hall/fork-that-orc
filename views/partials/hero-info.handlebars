@@ -3,11 +3,6 @@
     <p>Class: {{character_class}}</p>
     <p>Health: {{health}}</p>
     <p>Mana: {{mana}}</p>
-    {{!-- <p>Strength: {{strength}}</p>
-    <p>Dexterity: {{dexterity}}</p>
-    <p>Intelligence: {{intelligence}}</p>
-    <p>Weapon: {{weapon.weapon_name}} ({{weapon.weapon_rating}})</p>
-    <p>Armor: {{armor.armor_name}} ({{armor.armor_rating}})</p> --}}
 
     <button class="trigger">View Hero</button>
     <div class="modal">
@@ -25,5 +20,5 @@
         </div>
     </div>
 
-    <button class="delete-btn">Delete Hero</button>
+    <button class="delete-btn" char-no="{{id}}">Delete Hero</button>
 </article>
