@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Weapons, Armors, Character } = require('../models');
+const { Weapons, Armors, Character } = require('../models');
 const withAuth = require('../utils/auth');
 const sequelize = require('../config/connection')
 

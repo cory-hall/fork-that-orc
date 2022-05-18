@@ -1,7 +1,6 @@
 //import models
 const Armors = require('./Armors');
 const Character = require('./Hero');
-// const Inventory = require('./Inventory');
 const User = require('./User');
 const Weapons = require('./Weapons');
 const Vote = require('./Vote');
