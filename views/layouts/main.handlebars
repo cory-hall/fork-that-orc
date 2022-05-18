@@ -5,7 +5,9 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Fork That Orc</title>
-   <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="/stylesheets/style.css">
    
 </head>
@@ -15,11 +17,12 @@
       <header>
 
          {{#if loggedIn}}
-         <h1 class="darkmode-ignore">
-            <a href='/dashboard'>Fork That Orc</a>
+         <h1>
+            <a href='/dashboard' class="title">Fork That Orc</a>
+
          </h1>
          {{else}}
-         <h1>
+         <h1 class ="darkmode-ignore">
             <a href='/'>Fork That Orc</a>
          </h1>
          {{/if}}
@@ -48,7 +51,7 @@
       </main>
 
       <footer>
-         Blood and Thunder!
+         🩸Blood and Thunder!⛈️
       </footer>
    </div>
    {{#if loggedIn}}
@@ -57,14 +60,14 @@
 <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
 <script>
 const options = {
-  bottom: '64px', // default: '32px'
-  right: '32px', // default: '32px'
-  left: 'unset', // default: 'unset'
-  time: '0.5s', // default: '0.3s'
-  backgroundColor: '#aaa',  // default: '#fff'
-  saveInCookies: false, // default: true,
-  label: '🌓', // default: ''
-  autoMatchOsTheme: true // default: true
+  bottom: '64px',
+  right: '32px',
+  left: 'unset',
+  time: '0.5s',
+  backgroundColor: '#aaa',
+  saveInCookies: false,
+  label: '🌓',
+  autoMatchOsTheme: true
 }
 
 const darkmode = new Darkmode(options);
