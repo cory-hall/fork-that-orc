@@ -16,7 +16,6 @@ a {
   color: darkred;
   font-weight: bold;
   font-size: 1.5rem;
-  
 }
 
 h1 a {
@@ -34,7 +33,7 @@ a:hover {
   padding: 1%;
   color: white;
   font-weight: bold;
-  transition: background-color crimson .1s;
+  transition: background-color crimson 0.1s;
   cursor: pointer;
   border-radius: 5px;
   background-repeat: no-repeat;
@@ -85,11 +84,9 @@ button:hover {
           transition-duration: 0.5s;
 }
 
-
 .card-header {
   color: darkred;
 }
-
 
 .wrapper {
   width: 100%;
@@ -105,7 +102,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: stretch;
+  align-items: center;
   padding: 0 1%;
   font-size: 1.5rem;
 }
@@ -131,7 +128,7 @@ main {
   font-size: 1.5rem;
   padding: 0 1%;
   font-weight: bold;
-  transition: color .1s;
+  transition: color 0.1s;
   display: inline-block;
   justify-content: space-around;
 }
@@ -149,9 +146,8 @@ footer {
   font-size: 110%;
 }
 
-#logout{
+#logout {
   display: inline-block;
-  
 }
 
 /* CHARACTER CREATION SCREEN BEGIN */
@@ -172,7 +168,7 @@ footer {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-around;
-  margin-bottom: 30px;
+  margin-bottom: 1px;
 }
 
 .char-h1 {
@@ -233,7 +229,6 @@ footer {
   border-radius: 10px;
   padding: 30px;
   margin: 20px;
-
 }
 
 .top-input {
@@ -272,7 +267,6 @@ footer {
 .bot-input {
   width: 100%;
   padding: 12px;
-
 }
 
 .card p {
@@ -309,7 +303,8 @@ footer {
   margin-top: 10px;
 }
 
-.roll-char, .save-char {
+.roll-char,
+.save-char {
   width: 40%;
   align-self: center;
   margin: 5px;
@@ -317,36 +312,21 @@ footer {
 
 /* CHARACTER CREATION SCREEN END */
 
+/* Login / Signup */
 
-/* Dark mode */
-body{
-  padding:0% 3% 10% 3%;
-  text-align:center;
-  }
-  h1{
-  color: darkred;
-  margin-top:30px;
-  }
 
-  button{
-      cursor: pointer;
-      border: 1px solid #555;
-      text-align: center;
-  
-  }
-  .dark{
-      background-color: #222;
-      color: #e6e6e6;
-  }
+.login,
+.signup {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: auto;
+  border: 2px black solid;
+  border-radius: 15px;
+  background-color: lightgrey;
+  /* height: 300px; */
+}
 
-  .dot {
-    height: 25px;
-    width: 25px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-  }
-  /* Dark mode end */
 
   /* Login / Signup */
 
@@ -359,37 +339,57 @@ body{
     border-radius: 15px;
     background-color: lightgrey;
     /* height: 300px;
+
     width: 40%; */
-    margin: 10px;
-  }  
+  margin: 10px;
+}
 
-  .login h1, .signup h1 {
-    color: black;
-  }
+.login h1,
+.signup h1 {
+  color: black;
+}
 
-  .form {
-    display: flex;
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-    margin: 15px;
-    padding: 10px;
-  }
+.form {
+  display: flex;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 15px;
+  padding: 10px;
+}
 
-  .form-input {
-    padding: 12px;
-    border-radius: 15px;
-    margin: 5px;
-  }
+.form-input {
+  padding: 12px;
+  border-radius: 15px;
+  margin: 5px;
+}
 
-  .form-btn{
-    margin: 10px;
-    border-radius: 15px;
-  }
+.form-btn {
+  margin: 10px;
+  border-radius: 15px;
+}
 
-  /* Login / Signup End */
+/* Login / Signup End */
+
+
+/* Hero Card Begin */
+.heros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  border: 2px black solid;
+  margin: 10px;
+  min-width: 30%;
+}
 
   /* Hero Card Begin */
   .heros {
@@ -429,6 +429,7 @@ body{
     padding: 70px;
   }
 
+
   .username {
     color: black;
     font-size: 1.5rem;
@@ -439,18 +440,18 @@ body{
     flex-wrap: nowrap;
   }
 
-  .hero ul {
-    list-style: none;
-    list-style-position: inherit;
-  }
-  /* Hero Card End */
+.hero ul {
+  list-style: none;
+  list-style-position: inherit;
+}
+/* Hero Card End */
 
-  ul {
-    list-style-type: none;
-  
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
