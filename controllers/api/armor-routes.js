@@ -45,11 +45,17 @@ router.post('/', withAuth, (req, res) => {
 
 // PUT to update an armor
 router.put('/:id', withAuth, (req, res) => {
-  Armors.update({
-    where: {
-      id: req.params.id
+  Armors.update(
+    {
+      armor_name: req.body.armor_name,
+      armor_rating: req.body.armor.name
+    },
+    {
+      where: {
+        id: req.params.id
+      }
     }
-  })
+  )
   .then(dbData => {
     if (!dbData) {
       res.status(400).json({ message: 'No armor found with this id' });
