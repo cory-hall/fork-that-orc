@@ -1,8 +1,9 @@
 const router = require('express').Router();
-const db = require('../../config/connection');
-const {  Character } = require('../../models');
+const { Character } = require('../../models');
 const sequelize = require('../../config/connection');
+const withAuth = require('../../utils/auth');
 
+// GET all characters
 router.get('/', (req, res) => {
     Character.findAll({
         attributes: [
@@ -16,6 +17,7 @@ router.get('/', (req, res) => {
             'intelligence',
             'weapon_id',
             'armor_id',
+            // TODO
             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE hero.id = vote.hero_id)'), 'vote_count']
         ]
     })
@@ -26,6 +28,7 @@ router.get('/', (req, res) => {
         })
 });
 
+// GET a character based on `id` value
 router.get('/:id', (req, res) => {
     Character.findAll({
         where: {
@@ -42,6 +45,7 @@ router.get('/:id', (req, res) => {
             'intelligence',
             'weapon_id',
             'armor_id',
+            // TODO
             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE hero.id = hero.post_id)'), 'vote_count']
         ]
     })
@@ -52,7 +56,8 @@ router.get('/:id', (req, res) => {
         })
 });
 
-router.post('/', (req, res) => {
+// POST to create a new character
+router.post('/', withAuth, (req, res) => {
     Character.create({
         character_name: req.body.character_name,
         character_class: req.body.character_class,
@@ -73,7 +78,33 @@ router.post('/', (req, res) => {
         });
 });
 
-router.delete('/:id', (req, res) => {
+// PUT to update character
+router.put('/:id', withAuth, (req, res) => {
+    Character.update(
+       {
+          character_name: req.body.character_name
+       },
+       {
+          where: {
+             id: req.params.id
+          }
+       }
+    )
+       .then(dbData => {
+          if (!dbData) {
+             res.status(404).json({ message: 'No Hero found with this id' });
+             return;
+          }
+          res.json(dbData);
+       })
+       .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+       });
+ });
+
+ // DELETE a character based on `id` value
+router.delete('/:id', withAuth, (req, res) => {
     Character.destroy({
         where: {
             id: req.params.id
