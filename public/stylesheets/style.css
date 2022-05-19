@@ -37,6 +37,10 @@ nav {
   text-align: center;
 }
 
+button {
+  cursor: pointer; 
+}
+
 .btn {
   background-color: darkred;
   border: 0;
