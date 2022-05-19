@@ -37,6 +37,10 @@ nav {
   text-align: center;
 }
 
+button {
+  cursor: pointer; 
+}
+
 .btn {
   background-color: darkred;
   border: 0;
@@ -465,7 +469,7 @@ footer {
   height: 75px;
   background-size: contain;
   border: none;
-  margin: 0px 10px 10px 30px;
+  margin: 0px 0px 10px 30px;
   
 }
 
@@ -487,7 +491,7 @@ footer {
   height: 75px;
   background-size: contain;
   border: none;
-  margin: 0px 30px 10px 10px;
+  margin: 0px 0px 10px 0px;
 }
 
 .trigger:hover {
@@ -532,6 +536,7 @@ footer {
     width: 24rem;
     border-radius: 0.5rem;
     text-align: center;
+    border: 10px solid black;
 }
 
 .close-button {
