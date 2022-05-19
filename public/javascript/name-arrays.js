@@ -8,7 +8,19 @@ const firstName = [
   'Helen',
   'Timmy',
   'Agamemnon',
-  'Chuck'
+  'Chuck',
+  'Caius',
+  'Peter',
+  'Eddie',
+  'Sheogorath',
+  'Swordy',
+  'Bert',
+  'Ernie',
+  'Randy',
+  'Bob',
+  'Heroku',
+  'Homer',
+  'Fred'
 ];
 
 const lastName = [
@@ -18,7 +30,18 @@ const lastName = [
   'Griffith',
   'Kane',
   'Maguire',
-  'Norris'
+  'Norris',
+  'Cosades',
+  'Parker',
+  'Brock',
+  'McSwordFace',
+  'the Wise',
+  'the Vengeful',
+  'Wrangler',
+  'Barker',
+  'the Dishonored',
+  'Simpson',
+  'Durst'
 ];
 
 module.exports = { firstName, lastName };

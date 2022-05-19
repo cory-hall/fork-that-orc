@@ -2513,6 +2513,7 @@ const wepPostHandler = async (event) => {
 
 module.exports = { wepPostHandler };
 },{}],36:[function(require,module,exports){
+// data to supplement the random fields on the document
 const warriorArmor = [
   {
     name: "Iron Armor",
@@ -2645,7 +2646,7 @@ const randomArmHandler = (event) => {
   }
 }
 
-// this function generates the stat rolls
+// generates the  character stat rolls
 const rollStatHandler = (event) => {
   event.preventDefault();
 
@@ -2705,20 +2706,32 @@ document.querySelector('.save-char').addEventListener('click', buildChar);
 
 
 },{"./add-armor.js":33,"./add-char.js":34,"./add-weapon.js":35,"./armor-arrays":36,"./name-arrays":38,"./weapon-arrays":39,"roll":18}],38:[function(require,module,exports){
+// data to supplement the random fields on the document
 const firstName = [
   'The Butcher',
   'Garrosh',
-  'Austin'
+  'Austin',
+  'Toby',
+  'Ariadne',
+  'Helen',
+  'Timmy',
+  'Agamemnon',
+  'Chuck'
 ];
 
 const lastName = [
   "of Blaviken",
   'Hellscream',
-  'Carter'
+  'Carter',
+  'Griffith',
+  'Kane',
+  'Maguire',
+  'Norris'
 ];
 
 module.exports = { firstName, lastName };
 },{}],39:[function(require,module,exports){
+// data to supplement the random fields on the document
 const warriorWeapon = [
   {
     name: "Steel Axe",
