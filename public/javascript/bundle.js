@@ -2752,9 +2752,6 @@ const firstName = [
   'Helen',
   'Timmy',
   'Agamemnon',
-<<<<<<< HEAD
-  'Chuck'
-=======
   'Chuck',
   'Caius',
   'Peter',
@@ -2768,7 +2765,6 @@ const firstName = [
   'Heroku',
   'Homer',
   'Fred'
->>>>>>> f84fef9d5223adcd967325b2c1a1ff62327fbf9d
 ];
 
 const lastName = [
@@ -2778,9 +2774,6 @@ const lastName = [
   'Griffith',
   'Kane',
   'Maguire',
-<<<<<<< HEAD
-  'Norris'
-=======
   'Norris',
   'Cosades',
   'Parker',
@@ -2793,7 +2786,6 @@ const lastName = [
   'the Dishonored',
   'Simpson',
   'Durst'
->>>>>>> f84fef9d5223adcd967325b2c1a1ff62327fbf9d
 ];
 
 module.exports = { firstName, lastName };
