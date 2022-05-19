@@ -2513,6 +2513,7 @@ const wepPostHandler = async (event) => {
 
 module.exports = { wepPostHandler };
 },{}],36:[function(require,module,exports){
+// data to supplement the random fields on the document
 const warriorArmor = [
   {
     name: "Iron Armor",
@@ -2521,6 +2522,18 @@ const warriorArmor = [
   {
     name: "Dragonscale Armor",
     rating: 10
+  },
+  {
+    name: "Diamond Armor",
+    rating: 9
+  },
+  {
+    name: "Steel Armor",
+    rating: 8
+  },
+  {
+    name: "Affliction Tee",
+    rating: 100
   }
 ];
 
@@ -2532,6 +2545,18 @@ const rogueArmor = [
   {
     name: "Gilded Armor",
     rating: 10
+  },
+  {
+    name: "Bear Hide",
+    rating: 7
+  },
+  {
+    name: "Chitin Armor",
+    rating: 6
+  },
+  {
+    name: "Your Personality",
+    rating: 1
   }
 ];
 
@@ -2543,6 +2568,18 @@ const mageArmor = [
   {
     name: "Enchanted Robes",
     rating: 10
+  },
+  {
+    name: "Magic Cloak",
+    rating: 6
+  },
+  {
+    name: "Cape of Shadows",
+    rating: 7
+  },
+  {
+    name: "Mason's Hat",
+    rating: 100
   }
 ];
 
@@ -2645,7 +2682,7 @@ const randomArmHandler = (event) => {
   }
 }
 
-// this function generates the stat rolls
+// generates the  character stat rolls
 const rollStatHandler = (event) => {
   event.preventDefault();
 
@@ -2705,28 +2742,79 @@ document.querySelector('.save-char').addEventListener('click', buildChar);
 
 
 },{"./add-armor.js":33,"./add-char.js":34,"./add-weapon.js":35,"./armor-arrays":36,"./name-arrays":38,"./weapon-arrays":39,"roll":18}],38:[function(require,module,exports){
+// data to supplement the random fields on the document
 const firstName = [
   'The Butcher',
   'Garrosh',
-  'Austin'
+  'Austin',
+  'Toby',
+  'Ariadne',
+  'Helen',
+  'Timmy',
+  'Agamemnon',
+  'Chuck',
+  'Caius',
+  'Peter',
+  'Eddie',
+  'Sheogorath',
+  'Swordy',
+  'Bert',
+  'Ernie',
+  'Randy',
+  'Bob',
+  'Heroku',
+  'Homer',
+  'Fred'
 ];
 
 const lastName = [
   "of Blaviken",
   'Hellscream',
-  'Carter'
+  'Carter',
+  'Griffith',
+  'Kane',
+  'Maguire',
+  'Norris',
+  'Cosades',
+  'Parker',
+  'Brock',
+  'McSwordFace',
+  'the Wise',
+  'the Vengeful',
+  'Wrangler',
+  'Barker',
+  'the Dishonored',
+  'Simpson',
+  'Durst'
 ];
 
 module.exports = { firstName, lastName };
 },{}],39:[function(require,module,exports){
+// data to supplement the random fields on the document
 const warriorWeapon = [
   {
     name: "Steel Axe",
-    rating: "5"
+    rating: 5
   },
   {
     name: "Dragontooth Hammer",
-    rating: "10"
+    rating: 10
+  },
+  {
+    name: "Iron Broadsword",
+    rating: 7
+  },
+  {
+    name: "Ebony Claymore",
+    rating: 9
+  },
+  {
+    name: "Spiked Club",
+    rating: 6
+  },
+  {
+    name: "BFG 9000",
+    rating: 9000
   }
 ];
 
@@ -2738,6 +2826,22 @@ const rogueWeapon = [
   {
     name: "Corehound Tooth",
     rating: 10
+  },
+  {
+    name: "Longbow",
+    rating: 9
+  },
+  {
+    name: "Poison Darts",
+    rating: 7
+  },
+  {
+    name: "Clawed Gauntlets",
+    rating: 8
+  },
+  {
+    name: "Bag of Bees",
+    rating: 6
   }
 ];
 
@@ -2749,6 +2853,22 @@ const mageWeapon = [
   {
     name: "Wabbajack",
     rating: 10
+  },
+  {
+    name: "Book of Spells",
+    rating: 8
+  },
+  {
+    name: "Magic Wand",
+    rating: 7
+  },
+  {
+    name: "Enchanted Gloves",
+    rating: 5
+  },
+  {
+    name: "MSU Coding Cert",
+    rating: 100
   }
 ];
 
