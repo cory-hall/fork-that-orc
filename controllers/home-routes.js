@@ -1,14 +1,17 @@
 const router = require('express').Router();
 const { User, Weapons, Armors, Character } = require ('../models');
 
+// main/signup route
 router.get('/', (req, res) => {
   res.render('homepage');
 })
 
+// login route
 router.get('/login', (req, res) => {
   res.render('login')
 })
 
+// GET all characters and send to handlebars
 router.get('/all-heros', (req, res) => {
   Character.findAll({
     include: [

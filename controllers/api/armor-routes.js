@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { Armors } = require('../../models/')
+const { Armors } = require('../../models/');
+const withAuth = require('../../utils/auth');
 
 // GET all Armor
 router.get('/', (req, res) => {
@@ -26,7 +27,7 @@ router.get('/:id', (req, res) => {
 });
 
 // POST to create a new armor
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
   if (req.session) {
     // expects {"armor_name": "Plate Armor", "armor_class": "Warrior", "armor_rating": "8"
     Armors.create({
@@ -41,6 +42,32 @@ router.post('/', (req, res) => {
       })
   }
 });
+
+// PUT to update an armor
+router.put('/:id', withAuth, (req, res) => {
+  Armors.update(
+    {
+      armor_name: req.body.armor_name,
+      armor_rating: req.body.armor.name
+    },
+    {
+      where: {
+        id: req.params.id
+      }
+    }
+  )
+  .then(dbData => {
+    if (!dbData) {
+      res.status(400).json({ message: 'No armor found with this id' });
+      return;
+    }
+    res.json(dbData);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  })
+})
 
 // DELETE a armor based on `id` value
 router.delete('/:id', (req, res) => {

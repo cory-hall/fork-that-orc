@@ -37,6 +37,10 @@ nav {
   text-align: center;
 }
 
+button {
+  cursor: pointer; 
+}
+
 .btn {
   background-color: darkred;
   border: 0;
@@ -151,6 +155,10 @@ footer {
   padding: 1%;
   font-size: 110%;
   color: white
+}
+
+footer div {
+  color: darkgrey;
 }
 
 #logout {

@@ -53,6 +53,7 @@ router.get('/', withAuth, (req, res) => {
     });
 });
 
+// redirect to main character create page
 router.get('/charcreate', withAuth, (req, res) => {
   res.render('charcreate', {loggedIn: true});
 })
