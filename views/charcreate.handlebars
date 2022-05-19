@@ -1,0 +1,76 @@
+<form class="char-sheet">
+  <header class="char-header">
+    <section class="char">
+      <label for="charname">Character Name:</label>
+      <input name="charname" type="textarea" class="charname-input">
+      <button type="submit" class="name-btn">Randomize</button>
+    </section>
+    <section class="char">
+      <label for="charclass">Pick Your Class:</label>
+      <select name="charclass" id="charclass" class="charclass-input">
+        <option value="warrior">Warrior</option>
+        <option value="rogue">Rogue</option>
+        <option value="mage">Mage</option>
+      </select>
+    </section>
+  </header>
+
+  <h1 class="char-h1">Attributes</h1>
+  <div class="submit-roll">
+    <button type="submit" class="btn roll-char">Roll A Character</button>
+  </div>
+  <section class="section">
+    
+    <section class="health-stats">
+      <div class="top-card">
+        <label for="health" class="top-input">Health</label>
+        <input name="health" type="input" class="top-input">
+      </div>
+      <div class="top-card">
+        <label for="mana" class="top-input">Mana</label>
+        <input name="mana" type="input" class="top-input">
+      </div>
+    </section>
+
+    <section class="primary-stats">
+      <div class="top-card">
+        <label for="str" class="top-input">Strength</label>
+        <input name="str" type="input" class="top-input">
+      </div>
+      <div class="top-card">
+        <label for="dex" class="top-input">Dexterity</label>
+        <input name="dex" type="input" class="top-input">
+      </div>
+      <div class="top-card">
+        <label for="int" class="top-input">Intelligence</label>
+        <input name="int" type="input" class="top-input">
+      </div>
+    </section>
+  </section>
+
+  <h1 class="char-h1">Gear</h1>
+  <section class="section">
+    <section class="card bot-card" id="weapon">
+      <label for="wepname">Weapon Name: </label>
+      <input name="wepname" type="textarea" class="bot-input">
+      <label for="weprating">Damage: </label>
+      <input name="weprating" type="textarea" class="bot-input">
+    </section>
+    <section class="card bot-card" id="armor">
+      <label for="armname">Armor Name: </label>
+      <input name="armname" type="textarea" class="bot-input">
+      <label for="armrating">Defense: </label>
+      <input name="armrating" type="textarea" class="bot-input">
+
+    </section>
+  </section>
+  <div class="bot-btn">
+    <button type="submit" class="btn wep-btn">Randomize Weapon</button>
+    <button type="submit" class="btn arm-btn">Randomize Armor</button>
+  </div>
+  <div class="submit-roll">
+    <button type="submit" class="btn save-char">Save This Build</button>
+  </div>
+</form>
+
+<script src="/javascript/bundle.js"></script>

@@ -1,0 +1,575 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: 'Eagle Lake', cursive;
+  /* height: 100%; */
+  padding: 0;
+  margin: 0;
+  color: #333;
+  background-image: url(https://cdn.wallpapersafari.com/97/56/UGB4Lz.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh;
+  
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+h1 a {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+a:hover {
+  color: crimson;
+}
+
+nav {
+  text-align: center;
+}
+
+button {
+  cursor: pointer; 
+}
+
+.btn {
+  background-color: darkred;
+  border: 0;
+  padding: 1%;
+  color: white;
+  font-weight: bold;
+  transition: background-color crimson 0.1s;
+  cursor: pointer;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-position: -120px -120px, 0 0;
+  background-image: -webkit-linear-gradient(
+    top left,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.2) 37%,
+    rgba(255, 255, 255, 0.8) 45%,
+    rgba(255, 255, 255, 0.0) 50%
+  );
+  background-image: -moz-linear-gradient(
+    0 0,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.2) 37%,
+    rgba(255, 255, 255, 0.8) 45%,
+    rgba(255, 255, 255, 0.0) 50%
+  );    
+  background-image: -o-linear-gradient(
+    0 0,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.2) 37%,
+    rgba(255, 255, 255, 0.8) 45%,
+    rgba(255, 255, 255, 0.0) 50%
+  );
+  background-image: linear-gradient(
+    0 0,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.2) 37%,
+    rgba(255, 255, 255, 0.8) 45%,
+    rgba(255, 255, 255, 0.0) 50%
+  );
+  -moz-background-size: 250% 250%, 100% 100%;
+       background-size: 250% 250%, 100% 100%;
+  
+  -webkit-transition: background-position 0s ease;
+     -moz-transition: background-position 0s ease;       
+       -o-transition: background-position 0s ease;
+          transition: background-position 0s ease;
+}
+
+.heroCreate:hover, .allHero-link:hover, .title:hover {
+  background-color: crimson;
+  background-position: 0 0, 0 0;
+  
+  -webkit-transition-duration: 0.5s;
+     -moz-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.card-header {
+  color: darkred;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  border-bottom: 2px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 1%;
+  font-size: 1.5rem;
+}
+
+header h1 {
+  font-size: 1em;
+}
+
+main {
+  padding: 2% 4%;
+}
+
+.btn-no-style {
+  font-family: 'Eagle Lake', cursive;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0 1%;
+  font-weight: bold;
+  transition: color 0.1s;
+  display: inline-block;
+  justify-content: space-around;
+}
+
+.btn-no-style:hover, .heroCreate:hover, .allHero-link:hover, .title:hover {
+  background: none;
+  color: crimson;
+}
+
+footer {
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+  font-size: 110%;
+  color: white
+}
+
+footer div {
+  color: darkgrey;
+}
+
+#logout {
+  display: inline-block;
+}
+
+/* CHARACTER CREATION SCREEN BEGIN */
+.char-sheet {
+  background-image: url(https://wallpaperaccess.com/full/3872532.jpg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px;
+}
+
+.char-header {
+  width: 100%;
+  border: 3px black solid;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  margin-bottom: 1px;
+}
+
+.char-h1 {
+  border-bottom: 3px black solid;
+  width: 100%;
+  text-align: center;
+}
+
+.char {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.charname-input {
+  height: 1.5rem;
+  padding: 12px;
+  display: block;
+  margin: auto;
+  border: 2px black solid;
+}
+
+.name-btn {
+  margin-top: 5px;
+  width: 60%;
+}
+
+.charclass-input {
+  height: 1.5rem;
+  width: auto;
+  display: block;
+  margin: auto;
+  border: 2px black solid;
+}
+
+.section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.health-stats {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  width: 40%;
+}
+
+.top-card {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  border: 2px black solid;
+  border-radius: 10px;
+  padding: 30px;
+  margin: 20px;
+}
+
+.top-input {
+  font-size: x-large;
+  text-align: center;
+}
+
+.primary-stats {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  width: 40%;
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 2px black solid;
+  border-radius: 10px;
+  margin: 30px;
+  width: 60%;
+  height: 100px;
+}
+
+.bot-card {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  padding: 100px;
+  margin: 12px;
+}
+
+.bot-input {
+  width: 100%;
+  padding: 12px;
+}
+
+.card p {
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.stat {
+  font-size: 2rem;
+}
+
+.gear {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+  border-bottom: 3px black solid;
+}
+
+.bot-btn {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.submit-roll {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.roll-char,
+.save-char {
+  width: 40%;
+  align-self: center;
+  margin: 5px;
+}
+
+/* CHARACTER CREATION SCREEN END */
+
+/* Login / Signup */
+
+
+.login,
+.signup {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: auto;
+  border: 2px black solid;
+  border-radius: 15px;
+  background-color: lightgrey;
+  /* height: 300px; */
+}
+
+
+  /* Login / Signup */
+
+    /* height: 300px;
+  
+    width: 40%; */
+
+
+.login h1,
+.signup h1 {
+  color: black;
+}
+
+.form {
+  display: flex;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 15px;
+  padding: 10px;
+}
+
+.form-input {
+  padding: 12px;
+  border-radius: 15px;
+  margin: 5px;
+}
+
+.form-btn {
+  margin: 10px;
+  border-radius: 15px;
+}
+
+/* Login / Signup End */
+
+
+/* Hero Card Begin */
+.heros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  border: 2px black solid;
+  margin: 10px;
+  min-width: 30%;
+}
+  /* Hero Card Begin */
+  .heros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    border: solid 5px black;
+    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+    font-size: large;
+    margin: 10px;
+    min-width: 30%;
+    color: #222;
+    background: rgb(229,228,241);
+    background: linear-gradient(90deg, rgba(229,228,241,1) 0%, rgba(191,191,221,1) 24%, rgba(169,159,227,1) 38%, rgba(147,196,229,1) 56%, rgba(103,148,237,1) 88%, rgba(0,212,255,1) 100%);
+  }
+
+  .hero img {
+    width: 85px;
+    height: 85px;
+    border: 8px solid black;
+  }
+
+  .hero-icon {
+    border-radius: 5px;
+  }
+
+  .no-heroes {
+    min-height: 500px;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    padding: 70px;
+  }
+
+
+  .username {
+    color: black;
+    font-size: 1.5rem;
+  }
+
+  .name {
+    color: white;
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: darkred;
+    width: 100%;
+    justify-content: center;
+  }
+
+.hero ul {
+  list-style: none;
+  list-style-position: inherit;
+}
+
+.flex-contain {
+  display: flex;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.delete-btn {
+  background: none;
+  background-image: url(https://i.imgur.com/SW6zkp0.png);
+  background-repeat: no-repeat;
+  width: 75px;
+  height: 75px;
+  background-size: contain;
+  border: none;
+  margin: 0px 0px 10px 30px;
+  
+}
+
+.delete-btn:hover {
+  border: 1px solid red;
+  border-radius: 50%;
+  
+  
+  -webkit-transition-duration: 0.5s;
+     -moz-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.trigger {
+  background: none;
+  background-image: url(https://i.imgur.com/v7rQB5i.png);
+  background-repeat: no-repeat;
+  width: 75px;
+  height: 75px;
+  background-size: contain;
+  border: none;
+  margin: 0px 0px 10px 0px;
+}
+
+.trigger:hover {
+  border: 1px solid lightseagreen;
+  border-radius: 50%;
+  
+  
+  -webkit-transition-duration: 0.5s;
+     -moz-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
+.card-button {
+  font-family: 'Eagle Lake', cursive;
+}
+
+/* Hero Card End */
+
+
+  /* Modal Begin */
+  .modal {
+    z-index: 99999;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    border: 10px solid black;
+}
+
+.close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+
+.close-button:hover {
+    background-color: darkgray;
+}
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+  /* Modal End */
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
