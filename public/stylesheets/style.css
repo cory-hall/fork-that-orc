@@ -158,7 +158,8 @@ footer {
 }
 
 footer div {
-  color: darkgrey;
+  color: black;
+  z-index: 1;
 }
 
 #logout {
@@ -338,8 +339,13 @@ footer div {
   width: auto;
   border: 2px black solid;
   border-radius: 15px;
-  background-color: lightgrey;
-  /* height: 300px; */
+  background: rgb(4,2,49);
+background: linear-gradient(315deg, rgba(4,2,49,1) 0%, rgba(111,78,118,1) 12%, rgba(109,147,147,1) 40%, rgba(86,119,139,1) 63%, rgba(131,112,63,1) 80%, rgba(35,59,121,1) 100%);
+}
+
+.login a, .signup a {
+  text-align: center;
+  color: white;
 }
 
 
@@ -352,7 +358,8 @@ footer div {
 
 .login h1,
 .signup h1 {
-  color: black;
+  color: white;
+  text-align: center;
 }
 
 .form {
