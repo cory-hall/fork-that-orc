@@ -7,6 +7,18 @@ const warriorArmor = [
   {
     name: "Dragonscale Armor",
     rating: 10
+  },
+  {
+    name: "Diamond Armor",
+    rating: 9
+  },
+  {
+    name: "Steel Armor",
+    rating: 8
+  },
+  {
+    name: "Affliction Tee",
+    rating: 100
   }
 ];
 
@@ -18,6 +30,18 @@ const rogueArmor = [
   {
     name: "Gilded Armor",
     rating: 10
+  },
+  {
+    name: "Bear Hide",
+    rating: 7
+  },
+  {
+    name: "Chitin Armor",
+    rating: 6
+  },
+  {
+    name: "Your Personality",
+    rating: 1
   }
 ];
 
@@ -29,6 +53,18 @@ const mageArmor = [
   {
     name: "Enchanted Robes",
     rating: 10
+  },
+  {
+    name: "Magic Cloak",
+    rating: 6
+  },
+  {
+    name: "Cape of Shadows",
+    rating: 7
+  },
+  {
+    name: "Mason's Hat",
+    rating: 100
   }
 ];
 
