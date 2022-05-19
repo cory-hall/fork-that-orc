@@ -157,6 +157,10 @@ footer {
   color: white
 }
 
+footer div {
+  color: darkgrey;
+}
+
 #logout {
   display: inline-block;
 }
