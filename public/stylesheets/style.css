@@ -85,7 +85,7 @@ nav {
           transition: background-position 0s ease;
 }
 
-button:hover, .heroCreate:hover, .allHero-link:hover, .title:hover {
+.heroCreate:hover, .allHero-link:hover, .title:hover {
   background-color: crimson;
   background-position: 0 0, 0 0;
   
@@ -448,22 +448,60 @@ footer {
   list-style-position: inherit;
 }
 
-.button-container {
-    display:flex;
-    text-align: center;
-    width: 150px;margin:0;
+.flex-contain {
+  display: flex;
 }
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+}
+
 .delete-btn {
-  background-color: red;
+  background: none;
+  background-image: url(https://i.imgur.com/SW6zkp0.png);
+  background-repeat: no-repeat;
+  width: 75px;
+  height: 75px;
+  background-size: contain;
+  border: none;
+  margin: 0px 10px 10px 30px;
+  
+}
+
+.delete-btn:hover {
+  border: 1px solid red;
+  border-radius: 50%;
+  
+  
+  -webkit-transition-duration: 0.5s;
+     -moz-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 }
 
 .trigger {
-  background-color: aquamarine;
+  background: none;
+  background-image: url(https://i.imgur.com/v7rQB5i.png);
+  background-repeat: no-repeat;
+  width: 75px;
+  height: 75px;
+  background-size: contain;
+  border: none;
+  margin: 0px 30px 10px 10px;
+}
+
+.trigger:hover {
+  border: 1px solid lightseagreen;
+  border-radius: 50%;
+  
+  
+  -webkit-transition-duration: 0.5s;
+     -moz-transition-duration: 0.5s;
+          transition-duration: 0.5s;
 }
 
 .card-button {
   font-family: 'Eagle Lake', cursive;
-  border-radius: 100%;
 }
 
 /* Hero Card End */
