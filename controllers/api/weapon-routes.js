@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Weapons } = require('../../models/');
+const { Weapons, Armors, Character } = require('../../models/');
 const withAuth = require('../../utils/auth');
 
 // GET all weapons
@@ -26,8 +26,11 @@ router.get('/:id', (req, res) => {
     });
 });
 
+var weaponId;
+var armorId;
+
 // POST to create a new weapon
-router.post('/', withAuth,(req, res) => {
+router.post('/', withAuth,[middleware.getChar, middleware.getArmor],(req, res) => {
   if (req.session) {
     // expects {"weapon_name": "Sword", "weapon_class": "Warrior", "weapon_rating": "8"
     Weapons.create({
@@ -38,12 +41,37 @@ router.post('/', withAuth,(req, res) => {
       // weapon_image: req.body.weapon_image
     })
       .then(dbData => {
+        weaponId = dbData.id;
         res.json(dbData);
       })
-      .catch(err => {
-        console.log(err);
-        res.status(400).json(err);
-      })
+        .then(Armors.create({
+          armor_name: req.body.armor_name,
+          armor_class: req.body.weapon_class,
+          armor_rating: req.body.armor_rating
+        }))
+          .then(dbData => {
+            armorId = dbData.id;
+            res.json(dbData);
+          })
+            .then(Character.create({
+              character_name: req.body.character_name,
+              character_class: req.body.character_class,
+              health: req.body.health,
+              mana: req.body.mana,
+              strength: req.body.strength,
+              dexterity: req.body.dexterity,
+              intelligence: req.body.intelligence,
+              weapon_id: weaponId,
+              armor_id: armorId,
+              user_id: req.session.user_id
+            }))
+              .then(dbData => {
+                res.json(dbData)
+              })
+              .catch(err => {
+                console.log(err);
+                res.status(500).json(err);
+              })
   }
 });
 
