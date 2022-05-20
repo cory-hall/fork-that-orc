@@ -1,3 +1,7 @@
+
+
+
+
 // function to add the armor from the document to the database
 const armPostHandler = async (event) => {
   event.preventDefault();
@@ -8,7 +12,7 @@ const armPostHandler = async (event) => {
   const armor_rating = document.querySelector('input[name="armrating"]').value;
 
   // call the API POST method
-  const response = await fetch('/api/armors', {
+  const response = await fetch('/api/create/armor', {
     method: 'POST',
     body: JSON.stringify({
       armor_name,
@@ -20,9 +24,9 @@ const armPostHandler = async (event) => {
     }
   });
 
-  if (!response.ok) {
-    alert(response.statusText);
+  if (response.ok) {
+    charPostHandler(event)
+  } else {
+    alert(response.statusText)
   }
 }
-
-module.exports = { armPostHandler };

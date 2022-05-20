@@ -2415,104 +2415,6 @@ module.exports = function whichTypedArray(value) {
 
 }).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"available-typed-arrays":1,"call-bind/callBound":2,"es-abstract/helpers/getOwnPropertyDescriptor":4,"foreach":5,"has-tostringtag/shams":11,"is-typed-array":16}],33:[function(require,module,exports){
-// function to add the armor from the document to the database
-const armPostHandler = async (event) => {
-  event.preventDefault();
-
-  // get info from document
-  const armor_name = document.querySelector('input[name="armname"]').value;
-  const armor_class = document.querySelector('#charclass').value;
-  const armor_rating = document.querySelector('input[name="armrating"]').value;
-
-  // call the API POST method
-  const response = await fetch('/api/armors', {
-    method: 'POST',
-    body: JSON.stringify({
-      armor_name,
-      armor_class,
-      armor_rating
-    }),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  });
-
-  if (!response.ok) {
-    alert(response.statusText);
-  }
-}
-
-module.exports = { armPostHandler };
-},{}],34:[function(require,module,exports){
-// function to add the character from the document to the database
-const charPostHandler = async (event) => {
-  event.preventDefault();
-
-  // get info from document
-  const character_name = document.querySelector('input[name="charname"]').value;
-  const character_class = document.querySelector('#charclass').value;
-  const health = document.querySelector('input[name="health"]').value;
-  const mana = document.querySelector('input[name="mana"]').value;
-  const strength = document.querySelector('input[name="str"]').value;
-  const dexterity = document.querySelector('input[name="dex"]').value;
-  const intelligence = document.querySelector('input[name="int"]').value;
-
-  // call the API POST method
-  const response = await fetch('/api/characters', {
-    method: 'POST',
-    body: JSON.stringify({
-      character_name,
-      character_class,
-      health,
-      mana,
-      strength,
-      dexterity,
-      intelligence
-    }),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  });
-
-  if (response.ok) {
-    console.log('ADDED!');
-    document.location.replace('/dashboard');
-  } else {
-    alert(response.statusText);
-  }
-}
-
-module.exports = { charPostHandler };
-},{}],35:[function(require,module,exports){
-// function to add the weapon from the document to the database
-const wepPostHandler = async (event) => {
-  event.preventDefault();
-
-  // get info from document
-  const weapon_name = document.querySelector('input[name="wepname"]').value;
-  const weapon_class = document.querySelector('#charclass').value;
-  const weapon_rating = document.querySelector('input[name="weprating"]').value;
-
-  // call the API POST method
-  const response = await fetch('/api/weapons', {
-    method: 'POST',
-    body: JSON.stringify({
-      weapon_name,
-      weapon_class,
-      weapon_rating
-    }),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  });
-
-  if (!response.ok) {
-    alert(response.statusText);
-  }
-};
-
-module.exports = { wepPostHandler };
-},{}],36:[function(require,module,exports){
 // data to supplement the random fields on the document
 const warriorArmor = [
   {
@@ -2584,15 +2486,12 @@ const mageArmor = [
 ];
 
 module.exports = { warriorArmor, rogueArmor, mageArmor };
-},{}],37:[function(require,module,exports){
+},{}],34:[function(require,module,exports){
 // required library
 var Roll = require('roll'),
   roll = new Roll();
 
-// required imported functions
-var { wepPostHandler } = require('./add-weapon.js');
-var { armPostHandler } = require('./add-armor.js');
-var { charPostHandler } = require('./add-char.js');
+
 // required imported data
 var { firstName, lastName } = require('./name-arrays');
 var { warriorWeapon, rogueWeapon, mageWeapon } = require('./weapon-arrays');
@@ -2727,21 +2626,15 @@ const rollStatHandler = (event) => {
 };
 
 // function to add the weapon, armor, and character to the database
-const buildChar = () => {
-  wepPostHandler(event);
-  armPostHandler(event);
-  charPostHandler(event);
-}
 
 
 document.querySelector('.name-btn').addEventListener('click', randomNameHandler);
 document.querySelector('.roll-char').addEventListener('click', rollStatHandler);
 document.querySelector('.wep-btn').addEventListener('click', randomWepHandler);
 document.querySelector('.arm-btn').addEventListener('click', randomArmHandler);
-document.querySelector('.save-char').addEventListener('click', buildChar);
 
 
-},{"./add-armor.js":33,"./add-char.js":34,"./add-weapon.js":35,"./armor-arrays":36,"./name-arrays":38,"./weapon-arrays":39,"roll":18}],38:[function(require,module,exports){
+},{"./armor-arrays":33,"./name-arrays":35,"./weapon-arrays":36,"roll":18}],35:[function(require,module,exports){
 // data to supplement the random fields on the document
 const firstName = [
   'The Butcher',
@@ -2789,7 +2682,7 @@ const lastName = [
 ];
 
 module.exports = { firstName, lastName };
-},{}],39:[function(require,module,exports){
+},{}],36:[function(require,module,exports){
 // data to supplement the random fields on the document
 const warriorWeapon = [
   {
@@ -2873,4 +2766,4 @@ const mageWeapon = [
 ];
 
 module.exports = { warriorWeapon, rogueWeapon, mageWeapon };
-},{}]},{},[37]);
+},{}]},{},[34]);

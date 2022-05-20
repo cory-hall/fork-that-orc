@@ -1,3 +1,6 @@
+const saveBtn = document.querySelector('.save-char');
+
+
 // function to add the weapon from the document to the database
 const wepPostHandler = async (event) => {
   event.preventDefault();
@@ -8,7 +11,7 @@ const wepPostHandler = async (event) => {
   const weapon_rating = document.querySelector('input[name="weprating"]').value;
 
   // call the API POST method
-  const response = await fetch('/api/weapons', {
+  const response = await fetch('/api/create/weapon', {
     method: 'POST',
     body: JSON.stringify({
       weapon_name,
@@ -20,9 +23,11 @@ const wepPostHandler = async (event) => {
     }
   });
 
-  if (!response.ok) {
-    alert(response.statusText);
-  }
+  if (response.ok) {
+    armPostHandler(event)
+  } else (
+    alert(response.statusText)
+  )
 };
 
-module.exports = { wepPostHandler };
+saveBtn.addEventListener('click', wepPostHandler);
