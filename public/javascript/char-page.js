@@ -2,10 +2,7 @@
 var Roll = require('roll'),
   roll = new Roll();
 
-// required imported functions
-var { wepPostHandler } = require('./add-weapon.js');
-var { armPostHandler } = require('./add-armor.js');
-var { charPostHandler } = require('./add-char.js');
+
 // required imported data
 var { firstName, lastName } = require('./name-arrays');
 var { warriorWeapon, rogueWeapon, mageWeapon } = require('./weapon-arrays');
@@ -140,16 +137,10 @@ const rollStatHandler = (event) => {
 };
 
 // function to add the weapon, armor, and character to the database
-const buildChar = () => {
-  wepPostHandler(event);
-  armPostHandler(event);
-  charPostHandler(event);
-}
 
 
 document.querySelector('.name-btn').addEventListener('click', randomNameHandler);
 document.querySelector('.roll-char').addEventListener('click', rollStatHandler);
 document.querySelector('.wep-btn').addEventListener('click', randomWepHandler);
 document.querySelector('.arm-btn').addEventListener('click', randomArmHandler);
-document.querySelector('.save-char').addEventListener('click', buildChar);
 
