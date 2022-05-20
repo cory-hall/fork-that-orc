@@ -8,7 +8,7 @@ const wepPostHandler = async (event) => {
   const weapon_rating = document.querySelector('input[name="weprating"]').value;
 
   // call the API POST method
-  const response = await fetch('/api/weapons', {
+  const response = await fetch('/api/create', {
     method: 'POST',
     body: JSON.stringify({
       weapon_name,

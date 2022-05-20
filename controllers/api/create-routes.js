@@ -9,7 +9,7 @@ var armId;
 router.post('/', withAuth,(req, res) => {
   if (req.session) {
     // expects {"weapon_name": "Sword", "weapon_class": "Warrior", "weapon_rating": "8"
-    Weapons.create({
+    await Weapons.create({
       weapon_name: req.body.weapon_name,
       weapon_class: req.body.weapon_class,
       weapon_rating: req.body.weapon_rating,

@@ -8,7 +8,7 @@ const armPostHandler = async (event) => {
   const armor_rating = document.querySelector('input[name="armrating"]').value;
 
   // call the API POST method
-  const response = await fetch('/api/armors', {
+  const response = await fetch('/api/create', {
     method: 'POST',
     body: JSON.stringify({
       armor_name,
