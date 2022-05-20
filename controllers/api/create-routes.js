@@ -6,10 +6,10 @@ const withAuth = require('../../utils/auth');
 var wepId;
 var armId;
 
-router.post('/', withAuth,(req, res) => {
+router.post('/weapon', withAuth, (req, res) => {
   if (req.session) {
     // expects {"weapon_name": "Sword", "weapon_class": "Warrior", "weapon_rating": "8"
-    await Weapons.create({
+    Weapons.create({
       weapon_name: req.body.weapon_name,
       weapon_class: req.body.weapon_class,
       weapon_rating: req.body.weapon_rating,
@@ -26,8 +26,9 @@ router.post('/', withAuth,(req, res) => {
       })
   }
 })
-.then(
-router.post('/', withAuth, (req, res) => {
+
+
+router.post('/armor', withAuth, (req, res) => {
   if (req.session) {
     // expects {"armor_name": "Plate Armor", "armor_class": "Warrior", "armor_rating": "8"
     Armors.create({
@@ -35,7 +36,7 @@ router.post('/', withAuth, (req, res) => {
       armor_class: req.body.armor_class,
       armor_rating: req.body.armor_rating
     })
-      .then(dbData =>{
+      .then(dbData => {
         armId = dbData.id
         res.json(dbData)
       })
@@ -44,26 +45,27 @@ router.post('/', withAuth, (req, res) => {
         res.status(400).json(err);
       })
   }
-}))
-.then(router.post('/', withAuth, (req, res) => {
+})
+
+router.post('/char', withAuth, (req, res) => {
   Character.create({
-      character_name: req.body.character_name,
-      character_class: req.body.character_class,
-      health: req.body.health,
-      mana: req.body.mana,
-      strength: req.body.strength,
-      dexterity: req.body.dexterity,
-      intelligence: req.body.intelligence,
-      weapon_id: sequelize.literal('(SELECT id FROM weapon ORDER BY ID DESC LIMIT 1)'),
-      armor_id: sequelize.literal('(SELECT id FROM armor ORDER BY ID DESC LIMIT 1)'),
-      user_id: req.session.user_id
+    character_name: req.body.character_name,
+    character_class: req.body.character_class,
+    health: req.body.health,
+    mana: req.body.mana,
+    strength: req.body.strength,
+    dexterity: req.body.dexterity,
+    intelligence: req.body.intelligence,
+    weapon_id: wepId,
+    armor_id: armId,
+    user_id: req.session.user_id
   })
 
-      .then(userData => res.json(userData))
-      .catch(err => {
-          console.log(err);
-          res.status(400).json(err);
-      });
-}))
+    .then(userData => res.json(userData))
+    .catch(err => {
+      console.log(err);
+      res.status(400).json(err);
+    });
+})
 
 module.exports = router;
