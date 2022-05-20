@@ -12,7 +12,7 @@ const charPostHandler = async (event) => {
   const intelligence = document.querySelector('input[name="int"]').value;
 
   // call the API POST method
-  const response = await fetch('/api/characters', {
+  const response = await fetch('/api/create/char', {
     method: 'POST',
     body: JSON.stringify({
       character_name,
@@ -35,5 +35,3 @@ const charPostHandler = async (event) => {
     alert(response.statusText);
   }
 }
-
-module.exports = { charPostHandler };

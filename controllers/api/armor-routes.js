@@ -2,6 +2,8 @@ const router = require('express').Router();
 const { Armors } = require('../../models/');
 const withAuth = require('../../utils/auth');
 
+var armId;
+
 // GET all Armor
 router.get('/', (req, res) => {
   Armors.findAll({})
@@ -35,7 +37,10 @@ router.post('/', withAuth, (req, res) => {
       armor_class: req.body.armor_class,
       armor_rating: req.body.armor_rating
     })
-      .then(dbData => res.json(dbData))
+      .then(dbData => {
+        res.json(dbData)
+        return armId = dbData.id;
+      })
       .catch(err => {
         console.log(err);
         res.status(400).json(err);
@@ -56,17 +61,17 @@ router.put('/:id', withAuth, (req, res) => {
       }
     }
   )
-  .then(dbData => {
-    if (!dbData) {
-      res.status(400).json({ message: 'No armor found with this id' });
-      return;
-    }
-    res.json(dbData);
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  })
+    .then(dbData => {
+      if (!dbData) {
+        res.status(400).json({ message: 'No armor found with this id' });
+        return;
+      }
+      res.json(dbData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    })
 })
 
 // DELETE a armor based on `id` value
