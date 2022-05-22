@@ -27,26 +27,26 @@ router.get('/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
-
+// LEGACY //
 // POST to create a new armor
-router.post('/', withAuth, (req, res) => {
-  if (req.session) {
+// router.post('/', withAuth, (req, res) => {
+//   if (req.session) {
     // expects {"armor_name": "Plate Armor", "armor_class": "Warrior", "armor_rating": "8"
-    Armors.create({
-      armor_name: req.body.armor_name,
-      armor_class: req.body.armor_class,
-      armor_rating: req.body.armor_rating
-    })
-      .then(dbData => {
-        res.json(dbData)
-        return armId = dbData.id;
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(400).json(err);
-      })
-  }
-});
+//     Armors.create({
+//       armor_name: req.body.armor_name,
+//       armor_class: req.body.armor_class,
+//       armor_rating: req.body.armor_rating
+//     })
+//       .then(dbData => {
+//         res.json(dbData)
+//         return armId = dbData.id;
+//       })
+//       .catch(err => {
+//         console.log(err);
+//         res.status(400).json(err);
+//       })
+//   }
+// });
 
 // PUT to update an armor
 router.put('/:id', withAuth, (req, res) => {
