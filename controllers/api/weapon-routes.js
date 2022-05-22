@@ -26,26 +26,27 @@ router.get('/:id', (req, res) => {
     });
 });
 
+// LEGACY //
 // POST to create a new weapon
-router.post('/', withAuth,(req, res) => {
-  if (req.session) {
+// router.post('/', withAuth,(req, res) => {
+//   if (req.session) {
     // expects {"weapon_name": "Sword", "weapon_class": "Warrior", "weapon_rating": "8"
-    Weapons.create({
-      weapon_name: req.body.weapon_name,
-      weapon_class: req.body.weapon_class,
-      weapon_rating: req.body.weapon_rating,
+    // Weapons.create({
+    //   weapon_name: req.body.weapon_name,
+    //   weapon_class: req.body.weapon_class,
+    //   weapon_rating: req.body.weapon_rating,
       // TODO
       // weapon_image: req.body.weapon_image
-    })
-      .then(dbData => {
-        res.json(dbData);
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(400).json(err);
-      })
-  }
-});
+//     })
+//       .then(dbData => {
+//         res.json(dbData);
+//       })
+//       .catch(err => {
+//         console.log(err);
+//         res.status(400).json(err);
+//       })
+//   }
+// });
 
 // PUT to update weapon based on `id` value
 router.put('/:id', withAuth, (req, res) => {

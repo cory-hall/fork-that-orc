@@ -1,11 +1,11 @@
 const router = require('express').Router();
 const { Weapons, Armors, Character } = require('../../models');
-const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
 var wepId;
 var armId;
 
+// POST to create a new weapon
 router.post('/weapon', withAuth, (req, res) => {
   if (req.session) {
     // expects {"weapon_name": "Sword", "weapon_class": "Warrior", "weapon_rating": "8"
@@ -27,7 +27,7 @@ router.post('/weapon', withAuth, (req, res) => {
   }
 })
 
-
+// POST to create a new armor
 router.post('/armor', withAuth, (req, res) => {
   if (req.session) {
     // expects {"armor_name": "Plate Armor", "armor_class": "Warrior", "armor_rating": "8"
@@ -47,6 +47,7 @@ router.post('/armor', withAuth, (req, res) => {
   }
 })
 
+// POST to create a new character
 router.post('/char', withAuth, (req, res) => {
   Character.create({
     character_name: req.body.character_name,

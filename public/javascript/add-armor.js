@@ -1,7 +1,3 @@
-
-
-
-
 // function to add the armor from the document to the database
 const armPostHandler = async (event) => {
   event.preventDefault();

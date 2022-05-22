@@ -55,28 +55,28 @@ router.get('/:id', (req, res) => {
             res.status(500).json(err);
         })
 });
-
+// LEGACY //
 // POST to create a new character
-router.post('/', withAuth, (req, res) => {
-    Character.create({
-        character_name: req.body.character_name,
-        character_class: req.body.character_class,
-        health: req.body.health,
-        mana: req.body.mana,
-        strength: req.body.strength,
-        dexterity: req.body.dexterity,
-        intelligence: req.body.intelligence,
-        weapon_id: sequelize.literal('(SELECT id FROM weapon ORDER BY ID DESC LIMIT 1)'),
-        armor_id: sequelize.literal('(SELECT id FROM armor ORDER BY ID DESC LIMIT 1)'),
-        user_id: req.session.user_id
-    })
+// router.post('/', withAuth, (req, res) => {
+//     Character.create({
+//         character_name: req.body.character_name,
+//         character_class: req.body.character_class,
+//         health: req.body.health,
+//         mana: req.body.mana,
+//         strength: req.body.strength,
+//         dexterity: req.body.dexterity,
+//         intelligence: req.body.intelligence,
+//         weapon_id: sequelize.literal('(SELECT id FROM weapon ORDER BY ID DESC LIMIT 1)'),
+//         armor_id: sequelize.literal('(SELECT id FROM armor ORDER BY ID DESC LIMIT 1)'),
+//         user_id: req.session.user_id
+//     })
 
-        .then(userData => res.json(userData))
-        .catch(err => {
-            console.log(err);
-            res.status(400).json(err);
-        });
-});
+//         .then(userData => res.json(userData))
+//         .catch(err => {
+//             console.log(err);
+//             res.status(400).json(err);
+//         });
+// });
 
 // PUT to update character
 router.put('/:id', withAuth, (req, res) => {
