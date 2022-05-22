@@ -2,7 +2,6 @@
 var Roll = require('roll'),
   roll = new Roll();
 
-
 // required imported data
 var { firstName, lastName } = require('./name-arrays');
 var { warriorWeapon, rogueWeapon, mageWeapon } = require('./weapon-arrays');
@@ -135,8 +134,6 @@ const rollStatHandler = (event) => {
   dexField.value = dex;
   intField.value = int;
 };
-
-// function to add the weapon, armor, and character to the database
 
 
 document.querySelector('.name-btn').addEventListener('click', randomNameHandler);
